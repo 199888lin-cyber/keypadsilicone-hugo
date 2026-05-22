@@ -1,7 +1,7 @@
-﻿baseURL = "https://keypadsilicone-hugo.pages.dev/"
+baseURL = "https://keypadsilicone-hugo.pages.dev/"
 languageCode = "en-us"
 title = "Xiamen Yidexin Silicone Rubber | Professional Silicone Manufacturer"
-theme = "bigspring-light"
+# theme = "bigspring-light"
 themesDir = "themes"
 
 [params]
