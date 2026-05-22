@@ -1,30 +1,14 @@
-baseURL = "/"
+﻿baseURL = "https://keypadsilicone-hugo.pages.dev/"
 languageCode = "en-us"
 title = "Xiamen Yidexin Silicone Rubber | Professional Silicone Manufacturer"
 theme = "bigspring-light"
+themesDir = "themes"
 
 [params]
-  # Contact Info
   email = "silicone@xmydx.com"
   phone = "86-592-5659128"
   address = "2F/YISHENG BUILDING, 1ST INDUSTRIAL ZONE, XIAMEN, CHINA"
-  
-  # Site Logo
   logo = "images/logo.png"
-  
-  # Navigation
-  [[params.nav]]
-    name = "Home"
-    url = "/"
-  [[params.nav]]
-    name = "Products"
-    url = "/products"
-  [[params.nav]]
-    name = "About Us"
-    url = "/about"
-  [[params.nav]]
-    name = "Contact"
-    url = "/contact"
 
 [menu]
   [[menu.main]]
