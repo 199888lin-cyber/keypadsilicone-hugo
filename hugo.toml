@@ -1,0 +1,45 @@
+baseURL = "/"
+languageCode = "en-us"
+title = "Xiamen Yidexin Silicone Rubber | Professional Silicone Manufacturer"
+theme = "bigspring-light"
+
+[params]
+  # Contact Info
+  email = "silicone@xmydx.com"
+  phone = "86-592-5659128"
+  address = "2F/YISHENG BUILDING, 1ST INDUSTRIAL ZONE, XIAMEN, CHINA"
+  
+  # Site Logo
+  logo = "images/logo.png"
+  
+  # Navigation
+  [[params.nav]]
+    name = "Home"
+    url = "/"
+  [[params.nav]]
+    name = "Products"
+    url = "/products"
+  [[params.nav]]
+    name = "About Us"
+    url = "/about"
+  [[params.nav]]
+    name = "Contact"
+    url = "/contact"
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    URL = "/"
+    weight = 1
+  [[menu.main]]
+    name = "Products"
+    URL = "/products"
+    weight = 2
+  [[menu.main]]
+    name = "About"
+    URL = "/about"
+    weight = 3
+  [[menu.main]]
+    name = "Contact"
+    URL = "/contact"
+    weight = 4
