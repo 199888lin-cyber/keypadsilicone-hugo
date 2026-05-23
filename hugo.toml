@@ -2,3 +2,6 @@ baseURL = "/"
 title = "Keypad Silicone Manufacturer"
 theme = "bigspring-light"
 publishDir = "public"
+
+[params]
+  contact_form_action = "https://formspree.io/f/silicone@xmydx.com"
