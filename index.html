@@ -3,661 +3,428 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Xiamen Yidexin | Professional Silicone Keypad & Rubber Products Manufacturer</title>
+  <title>Xiamen Yidexin | Professional Silicone Manufacturer</title>
   <meta name="description" content="Xiamen Yidexin is a leading silicone rubber manufacturer with 20 years experience. Custom silicone keypads, OEM rubber products, and silicone components for global industries." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
-      --blue: #0056b3;
-      --blue-dark: #003d7a;
-      --blue-light: #f0f7ff;
-      --gray: #4a5568;
-      --gray-light: #f7fafc;
-      --dark: #1a202c;
-      --white: #ffffff;
-      --radius: 12px;
-      --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+      --bg: #0A0A0F;
+      --card-bg: #14141D;
+      --accent: #C9A84C;
+      --accent-dim: rgba(201, 168, 76, 0.15);
+      --text-main: #FFFFFF;
+      --text-dim: rgba(255, 255, 255, 0.7);
+      --border: rgba(255, 255, 255, 0.08);
+      --gold-border: rgba(201, 168, 76, 0.3);
+      --font-head: 'Montserrat', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --transition: all 0.65s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', system-ui, -apple-system, sans-serif; color: var(--dark); background: var(--white); line-height: 1.5; -webkit-font-smoothing: antialiased; }
+    body { 
+      background-color: var(--bg); 
+      color: var(--text-main); 
+      font-family: var(--font-body); 
+      line-height: 1.6; 
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
 
-    /* NAV */
+    /* ANIMATIONS */
+    .reveal { opacity: 0; transform: translateY(30px); transition: var(--transition); }
+    .reveal.active { opacity: 1; transform: translateY(0); }
+
+    /* NAVIGATION */
     nav {
-      position: sticky; top: 0; z-index: 1000;
-      background: rgba(255,255,255,0.9);
-      backdrop-filter: saturate(180%) blur(20px);
-      border-bottom: 1px solid rgba(226, 232, 240, 0.8);
-      padding: 0 8%;
+      position: fixed; top: 0; width: 100%; z-index: 1000;
+      background: rgba(10, 10, 15, 0.8);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 8%; height: 80px;
       display: flex; align-items: center; justify-content: space-between;
-      height: 72px;
     }
-    .logo { font-size: 1.4rem; font-weight: 800; color: var(--blue); letter-spacing: -0.025em; }
-    .logo span { color: var(--dark); }
-    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
-    .nav-links a { text-decoration: none; color: var(--dark); font-weight: 600; font-size: 0.95rem; opacity: 0.7; transition: all .2s; }
-    .nav-links a:hover { opacity: 1; color: var(--blue); }
+    .logo { font-family: var(--font-head); font-size: 1.25rem; font-weight: 900; letter-spacing: -1px; }
+    .logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: 3rem; list-style: none; }
+    .nav-links a { 
+      text-decoration: none; color: var(--text-main); 
+      font-size: 0.75rem; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; transition: var(--transition);
+      opacity: 0.6;
+    }
+    .nav-links a:hover { opacity: 1; color: var(--accent); }
     .nav-cta {
-      background: var(--blue); color: var(--white); border: none;
-      padding: 12px 24px; border-radius: 8px;
-      font-weight: 700; font-size: 0.9rem; cursor: pointer; text-decoration: none;
-      transition: all .2s;
+      border: 1px solid var(--accent); color: var(--accent);
+      padding: 10px 24px; border-radius: 4px;
+      font-size: 0.75rem; font-weight: 800; text-transform: uppercase;
+      text-decoration: none; letter-spacing: 1px;
+      transition: var(--transition);
     }
-    .nav-cta:hover { background: var(--blue-dark); transform: scale(1.02); }
+    .nav-cta:hover { background: var(--accent); color: #000; }
 
     /* HERO */
     .hero {
-      background: radial-gradient(circle at top right, #1e3a8a 0%, #0f172a 100%);
-      color: var(--white);
-      padding: 120px 8% 100px;
-      display: flex; align-items: center; justify-content: space-between; gap: 4rem;
+      height: 100vh; min-height: 700px;
+      padding: 0 8%; display: flex; align-items: center; justify-content: center;
+      background: radial-gradient(circle at center, rgba(201, 168, 76, 0.05) 0%, transparent 70%);
+      text-align: center; position: relative;
     }
-    .hero-text { flex: 1.2; }
+    .hero::after {
+      content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 200px;
+      background: linear-gradient(to top, var(--bg), transparent);
+    }
+    .hero-content { max-width: 900px; z-index: 10; }
     .hero-badge {
-      display: inline-flex; align-items: center;
-      background: rgba(255,255,255,0.1);
-      border: 1px solid rgba(255,255,255,0.2);
-      padding: 8px 16px; border-radius: 100px;
-      font-size: 0.8rem; font-weight: 700; color: #93c5fd;
-      text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 2rem;
+      display: inline-block; color: var(--accent);
+      font-size: 0.7rem; font-weight: 800; text-transform: uppercase;
+      letter-spacing: 4px; border: 1px solid var(--accent-dim);
+      padding: 6px 20px; border-radius: 100px; margin-bottom: 2rem;
+      background: var(--accent-dim);
     }
-    .hero h1 { font-size: 3.8rem; font-weight: 900; line-height: 1.1; margin-bottom: 1.5rem; letter-spacing: -0.04em; }
-    .hero h1 em { font-style: normal; background: linear-gradient(90deg, #93c5fd, #60a5fa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    .hero p { font-size: 1.25rem; color: rgba(255,255,255,0.7); line-height: 1.6; margin-bottom: 3rem; max-width: 90%; }
-    .hero-btns { display: flex; gap: 1.2rem; }
-    .btn-primary {
-      background: var(--blue); color: var(--white);
-      padding: 16px 36px; border-radius: 10px;
-      font-weight: 700; font-size: 1.05rem; text-decoration: none;
-      transition: all .2s;
-      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.3);
+    .hero h1 { 
+      font-family: var(--font-head); font-size: 5rem; line-height: 1;
+      margin-bottom: 1.5rem; letter-spacing: -3px; 
     }
-    .btn-primary:hover { background: #1d4ed8; transform: translateY(-2px); }
-    .btn-outline {
-      border: 2px solid rgba(255,255,255,0.2); color: var(--white);
-      padding: 16px 36px; border-radius: 10px;
-      font-weight: 700; font-size: 1.05rem; text-decoration: none;
-      transition: all .2s;
+    .hero h1 em { font-style: normal; color: var(--accent); }
+    .hero p { font-size: 1.25rem; color: var(--text-dim); margin-bottom: 3.5rem; max-width: 700px; margin-left: auto; margin-right: auto; }
+    .hero-btns { display: flex; gap: 1.5rem; justify-content: center; }
+    .btn-main {
+      background: var(--accent); color: #000;
+      padding: 18px 45px; border-radius: 4px;
+      font-weight: 900; font-size: 0.9rem; text-transform: uppercase;
+      text-decoration: none; letter-spacing: 1px; transition: var(--transition);
     }
-    .btn-outline:hover { background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.5); }
-    .hero-visual { flex: 0.8; position: relative; }
-    .hero-visual img { width: 100%; border-radius: 24px; box-shadow: 0 30px 60px rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.1); }
-    .hero-stats { display: flex; gap: 2.5rem; margin-top: 3rem; }
-    .stat-item h3 { font-size: 2rem; font-weight: 800; color: #93c5fd; }
-    .stat-item p { font-size: 0.85rem; color: rgba(255,255,255,0.65); margin-top: 2px; }
-    .hero-visual {
-      flex: 1; max-width: 440px;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.2);
-      border-radius: 20px; padding: 2.5rem;
-      display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;
-    }
-    .product-chip {
-      background: rgba(255,255,255,0.12);
-      border: 1px solid rgba(255,255,255,0.2);
-      border-radius: 50px; padding: 10px 20px;
-      font-size: 0.88rem; font-weight: 500; color: rgba(255,255,255,0.9);
-    }
-    .product-chip.active { background: rgba(255,255,255,0.25); border-color: rgba(255,255,255,0.5); }
+    .btn-main:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(201, 168, 76, 0.3); }
 
-    /* SECTION BASE */
-    section { padding: 90px 5%; }
-    .section-label {
-      font-size: 0.8rem; font-weight: 700; letter-spacing: 2px;
-      text-transform: uppercase; color: var(--blue); margin-bottom: 0.8rem;
+    /* ABOUT / VIDEO SECTION */
+    section { padding: 120px 8%; }
+    .about-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 6rem; align-items: center; }
+    .video-wrapper {
+      position: relative; border-radius: 20px; overflow: hidden;
+      border: 1px solid var(--border); box-shadow: 0 50px 100px rgba(0,0,0,0.5);
     }
-    .section-title { font-size: 2.3rem; font-weight: 800; line-height: 1.2; letter-spacing: -0.5px; margin-bottom: 1rem; }
-    .section-sub { font-size: 1.05rem; color: var(--gray); line-height: 1.7; max-width: 600px; }
-    .section-header { text-align: center; margin-bottom: 3.5rem; }
-    .section-header .section-sub { margin: 0 auto; }
-
-    /* TRUST BAR */
-    .trust-bar {
-      background: var(--gray-light); padding: 28px 5%;
-      display: flex; align-items: center; justify-content: center;
-      gap: 3rem; flex-wrap: wrap;
-    }
-    .trust-item { display: flex; align-items: center; gap: 10px; }
-    .trust-icon { font-size: 1.4rem; }
-    .trust-text { font-size: 0.9rem; font-weight: 600; color: var(--dark); }
+    .video-wrapper video { width: 100%; display: block; border-radius: 20px; }
+    .about-tag { color: var(--accent); font-weight: 800; font-size: 0.8rem; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 1rem; display: block; }
+    .about-text h2 { font-family: var(--font-head); font-size: 3rem; margin-bottom: 2rem; letter-spacing: -1px; line-height: 1.1; }
+    .about-text p { color: var(--text-dim); margin-bottom: 1.5rem; font-size: 1.1rem; }
 
     /* PRODUCTS */
-    .products { background: #fcfdfe; }
-    .product-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 2rem;
-    }
+    .products { background: #060608; }
+    .section-head { text-align: center; margin-bottom: 5rem; }
+    .section-head h2 { font-family: var(--font-head); font-size: 3.5rem; letter-spacing: -2px; margin-bottom: 1rem; }
+    .section-head p { color: var(--text-dim); max-width: 600px; margin: 0 auto; }
+    
+    .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 2.5rem; }
     .product-card {
-      background: var(--white);
-      border: 1px solid #edf2f7; border-radius: 16px;
-      padding: 1.5rem; transition: all .3s cubic-bezier(0.4, 0, 0.2, 1);
-      display: flex; flex-direction: column;
+      background: var(--card-bg); border: 1px solid var(--border);
+      border-radius: 24px; padding: 2.5rem; transition: var(--transition);
+      display: flex; flex-direction: column; height: 100%;
     }
     .product-card:hover { 
-      box-shadow: 0 20px 40px rgba(26,86,219,0.08); 
-      transform: translateY(-8px);
-      border-color: var(--blue-light);
+      transform: translateY(-15px); border-color: var(--gold-border);
+      box-shadow: 0 30px 60px rgba(0,0,0,0.4);
     }
-    .product-img-wrapper {
-      width: 100%; height: 220px; 
-      background: #f8fafc; border-radius: 12px; 
-      margin-bottom: 1.25rem; overflow: hidden;
+    .p-img-box {
+      width: 100%; height: 260px; background: #000;
+      border-radius: 16px; margin-bottom: 2rem; overflow: hidden;
       display: flex; align-items: center; justify-content: center;
+      border: 1px solid rgba(255,255,255,0.03);
     }
-    .product-img { 
-      max-width: 90%; max-height: 90%; 
-      object-fit: contain; 
-      transition: transform .5s;
+    .p-img { max-width: 85%; max-height: 85%; object-fit: contain; transition: 0.8s ease; }
+    .product-card:hover .p-img { transform: scale(1.1); }
+    .product-card h3 { font-family: var(--font-head); font-size: 1.4rem; margin-bottom: 1rem; letter-spacing: -0.5px; }
+    .product-card p { color: var(--text-dim); font-size: 0.95rem; line-height: 1.7; flex-grow: 1; margin-bottom: 2rem; }
+    .product-cta {
+      display: inline-flex; align-items: center; gap: 8px;
+      color: var(--accent); text-decoration: none; font-weight: 800; font-size: 0.8rem;
+      text-transform: uppercase; letter-spacing: 1px;
     }
-    .product-card:hover .product-img { transform: scale(1.05); }
-    .product-info { flex-grow: 1; }
-    .product-card h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 0.6rem; color: var(--dark); }
-    .product-card p { font-size: 0.88rem; color: var(--gray); line-height: 1.6; margin-bottom: 1.25rem; }
-    .product-footer { display: flex; align-items: center; justify-content: space-between; margin-top: auto; }
-    .product-tag {
-      background: var(--blue-light); color: var(--blue);
-      padding: 4px 12px; border-radius: 50px;
-      font-size: 0.75rem; font-weight: 600;
-    }
-    .product-link { font-size: 0.85rem; font-weight: 700; color: var(--blue); text-decoration: none; }
 
-    /* WHY US */
-    .why-us { background: #f8faff; }
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 2rem;
-    }
-    .feature-card {
-      background: var(--white); border-radius: 16px; padding: 2rem;
-      border-left: 4px solid var(--blue);
-      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
-    }
-    .feature-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.6rem; }
-    .feature-card p { font-size: 0.9rem; color: var(--gray); line-height: 1.65; }
-    .feature-num { font-size: 2rem; font-weight: 800; color: var(--blue); opacity: 0.15; margin-bottom: 0.5rem; }
-
-    /* PROCESS */
-    .process { background: var(--white); padding: 100px 8%; }
-    .process-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; position: relative; }
-    .step { text-align: center; padding: 2rem 1rem; position: relative; }
-    .step-num {
-      width: 60px; height: 60px;
-      background: var(--blue-light); color: var(--blue);
-      border-radius: 50%; display: flex; align-items: center; justify-content: center;
-      font-size: 1.5rem; font-weight: 800; margin: 0 auto 1.5rem;
-      border: 2px solid var(--white); box-shadow: 0 0 0 4px var(--blue-light);
-    }
-    .step h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--dark); }
-    .step p { font-size: 0.9rem; color: var(--gray); line-height: 1.6; }
+    /* TRUST SECTION */
+    .trust { padding: 80px 8%; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .trust-grid { display: flex; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
+    .trust-item { text-align: center; flex: 1; min-width: 150px; }
+    .trust-val { display: block; font-family: var(--font-head); font-size: 2.5rem; color: var(--accent); margin-bottom: 0.5rem; }
+    .trust-lab { font-size: 0.75rem; font-weight: 800; text-transform: uppercase; color: var(--text-dim); letter-spacing: 2px; }
 
     /* CONTACT */
-    .contact { background: #0f172a; color: var(--white); padding: 100px 8%; }
-    .contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 6rem; align-items: start; }
-    .contact-info h3 { font-size: 1.5rem; font-weight: 800; margin-bottom: 2rem; color: var(--white); }
-    .contact-item { display: flex; gap: 1.25rem; margin-bottom: 2rem; }
-    .contact-item-icon { font-size: 1.5rem; color: #60a5fa; }
-    .contact-item p { font-size: 1rem; color: rgba(255,255,255,0.7); line-height: 1.6; }
-    .contact-item strong { color: var(--white); display: block; font-size: 1.1rem; margin-bottom: 4px; }
-    .contact-form { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 3rem; }
+    .contact { background: #0A0A0F; }
+    .contact-container {
+      display: grid; grid-template-columns: 1fr 1.2fr; gap: 8rem;
+    }
+    .contact-form {
+      background: var(--card-bg); border: 1px solid var(--border);
+      padding: 4rem; border-radius: 30px;
+    }
+    .form-group { margin-bottom: 1.5rem; }
+    .form-group label { display: block; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem; color: var(--accent); }
     .form-group input, .form-group select, .form-group textarea {
-      background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.1);
-      padding: 14px 18px; border-radius: 10px; color: var(--white);
+      width: 100%; background: #000; border: 1px solid var(--border);
+      padding: 16px; border-radius: 8px; color: #fff; font-family: inherit;
     }
-    .form-group input:focus { border-color: var(--blue); background: rgba(255,255,255,0.12); }
-    .form-group input::placeholder, .form-group textarea::placeholder { color: rgba(255,255,255,0.4); }
-    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
-      outline: none; border-color: #93c5fd;
-    }
-    .form-group select option { background: #1e3a8a; color: var(--white); }
-    .form-group textarea { resize: vertical; min-height: 100px; }
-    .btn-submit {
-      width: 100%; background: var(--blue); color: var(--white);
-      border: none; padding: 14px; border-radius: var(--radius);
-      font-weight: 700; font-size: 1rem; cursor: pointer;
-      transition: background .2s, transform .2s;
-    }
-    .btn-submit:hover { background: var(--blue-dark); transform: translateY(-1px); }
-
+    .form-group input:focus { outline: none; border-color: var(--accent); }
+    
     /* FOOTER */
-    footer {
-      background: #070e1a; color: rgba(255,255,255,0.5);
-      text-align: center; padding: 2rem 5%;
-      font-size: 0.85rem;
-    }
-    footer a { color: rgba(255,255,255,0.5); text-decoration: none; }
-    footer a:hover { color: var(--white); }
+    footer { background: #000; padding: 60px 8%; text-align: center; border-top: 1px solid var(--border); }
+    .footer-logo { margin-bottom: 2rem; }
+    .footer-links { display: flex; justify-content: center; gap: 3rem; margin-bottom: 2rem; }
+    .footer-links a { color: var(--text-dim); text-decoration: none; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; }
+    .copy { font-size: 0.75rem; color: rgba(255,255,255,0.3); }
 
-    /* VIDEO SECTION */
-    .video-section { background: var(--dark); color: var(--white); padding: 80px 5%; text-align: center; }
-    .video-container { max-width: 900px; margin: 0 auto; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.5); background: #000; }
-    .video-container video { width: 100%; display: block; }
-    .video-info { margin-top: 2rem; max-width: 700px; margin-left: auto; margin-right: auto; }
-    .video-info h2 { color: var(--white); margin-bottom: 1rem; }
-    .video-info p { color: rgba(255,255,255,0.7); line-height: 1.6; }
-
-    /* ABOUT SECTION */
-    .about-content { display: grid; grid-template-columns: 1.2fr 1fr; gap: 4rem; align-items: center; }
-    .about-visual { border-radius: 20px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.15); background: #000; line-height: 0; }
-    .about-visual video { width: 100%; display: block; }
-    .about-text h2 { margin-bottom: 1.5rem; }
-    .about-text p { margin-bottom: 1.2rem; color: var(--gray); line-height: 1.8; }
-
-    /* RESPONSIVE */
+    /* MOBILE */
     @media (max-width: 1024px) {
-      .about-content { grid-template-columns: 1fr; gap: 2rem; }
-      .hero { flex-direction: column; text-align: center; padding: 60px 5%; }
-      .hero-text { max-width: 100%; }
-      .hero-visual { display: none; }
-      .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .hero h1 { font-size: 3.5rem; }
+      .about-grid, .contact-container { grid-template-columns: 1fr; gap: 4rem; }
+      .nav-links { display: none; }
     }
     @media (max-width: 768px) {
-      .nav-links { display: none; }
-      .product-grid { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
-      .section-title { font-size: 2rem; }
+      .hero h1 { font-size: 2.5rem; }
+      section { padding: 80px 5%; }
     }
   </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
-  <div class="logo">Yidexin<span>Silicone</span></div>
+  <div class="logo">YIDEXIN<span>SILICONE</span></div>
   <ul class="nav-links">
-    <li><a href="#products">Products</a></li>
-    <li><a href="#why-us">Why Us</a></li>
-    <li><a href="#process">Process</a></li>
+    <li><a href="#products">Collection</a></li>
+    <li><a href="#about">Our Factory</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <a href="#contact" class="nav-cta">Get Free Quote</a>
+  <a href="#contact" class="nav-cta">Inquiry</a>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
-  <div class="hero-text">
-    <div class="hero-badge">🏭 20 Years Professional Silicone Manufacturer</div>
-    <h1>Expert Custom <em>Silicone Solutions</em> for Your Industry</h1>
-    <p>Since 2005, Xiamen Yidexin has provided end-to-end services from design and mould making to mass production of high-precision silicone keypads and rubber components.</p>
+  <div class="hero-content reveal">
+    <span class="hero-badge">ESTABLISHED 2005</span>
+    <h1>Precision Engineering in <em>Silicone Rubber</em></h1>
+    <p>Premium OEM/ODM manufacturing solutions for medical, automotive, and industrial components.</p>
     <div class="hero-btns">
-      <a href="#contact" class="btn-primary">Request Free Quote</a>
-      <a href="#products" class="btn-outline">View Products</a>
+      <a href="#contact" class="btn-main">Get a Quote</a>
+      <a href="#products" class="btn-main" style="background: transparent; border: 1px solid var(--border); color: #fff;">Explore Collection</a>
     </div>
-  </div>
-  <div class="hero-visual">
-    <img src="https://s.alicdn.com/@sc04/kf/H504e85e20f48465bb8fa8d7e362c9330N.jpg" alt="Silicone Products Showcase">
   </div>
 </section>
 
-<!-- ABOUT US -->
+<section class="trust">
+  <div class="trust-grid reveal">
+    <div class="trust-item">
+      <span class="trust-val">20+</span>
+      <span class="trust-lab">Years Experience</span>
+    </div>
+    <div class="trust-item">
+      <span class="trust-val">5000㎡</span>
+      <span class="trust-lab">Facility Size</span>
+    </div>
+    <div class="trust-item">
+      <span class="trust-val">60+</span>
+      <span class="trust-lab">Global Markets</span>
+    </div>
+    <div class="trust-item">
+      <span class="trust-val">ISO</span>
+      <span class="trust-lab">9001:2015</span>
+    </div>
+  </div>
+</section>
+
 <section class="about" id="about">
-  <div class="about-content">
-    <div class="about-visual">
+  <div class="about-grid">
+    <div class="video-wrapper reveal">
       <video controls poster="https://sc01.alicdn.com/kf/A1d2a3dbc539c4c92ac6785a5001847d4g.png">
         <source src="assets/video/factory.mp4" type="video/mp4">
-        Your browser does not support the video tag.
       </video>
     </div>
-    <div class="about-text">
-      <div class="section-label">About Yidexin</div>
-      <h2 class="section-title">20 Years of Precision Silicone Manufacturing</h2>
-      <p>Founded in 2005, Xiamen Yidexin Silicone Rubber Co., Ltd. has grown into a leading professional manufacturer of silicone rubber products in China. Our facility covers over 5,000 square meters and is equipped with advanced compression molding, liquid injection molding (LIM), and CNC tooling machines.</p>
-      <p>We specialize in custom silicone keypads, medical-grade components, and high-performance rubber seals. With our in-house mold design and manufacturing team, we provide rapid prototyping and cost-effective solutions for clients across medical, automotive, industrial, and consumer electronics sectors.</p>
+    <div class="about-text reveal">
+      <span class="about-tag">About The Manufacturer</span>
+      <h2>Advanced Production for High-End Quality</h2>
+      <p>Based in Xiamen, Yidexin is a professional manufacturer specializing in high-precision silicone rubber products. Our state-of-the-art facility integrates mould design, production, and quality control.</p>
+      <p>We empower global brands with reliable components, from custom keypads to medical-grade liquid silicone parts, ensuring every piece meets rigorous international standards.</p>
+      <a href="#contact" class="product-cta">Learn More About Us →</a>
     </div>
   </div>
 </section>
 
-<!-- TRUST BAR -->
-<div class="trust-bar">
-  <div class="trust-item"><span class="trust-icon">✅</span><span class="trust-text">ISO 9001:2015 Certified</span></div>
-  <div class="trust-item"><span class="trust-icon">🚀</span><span class="trust-text">Sample in 7 Days</span></div>
-  <div class="trust-item"><span class="trust-icon">🌍</span><span class="trust-text">Export to 60+ Countries</span></div>
-  <div class="trust-item"><span class="trust-icon">🔬</span><span class="trust-text">100% Quality Inspection</span></div>
-  <div class="trust-item"><span class="trust-icon">💬</span><span class="trust-text">24/7 Engineer Support</span></div>
-</div>
-
-<!-- PRODUCTS -->
 <section class="products" id="products">
-  <div class="section-header">
-    <div class="section-label">Our Products</div>
-    <h2 class="section-title">Full Range of Silicone Solutions</h2>
-    <p class="section-sub">From standard keypads to fully custom silicone components, we deliver precision parts for every industry.</p>
+  <div class="section-head reveal">
+    <h2>Our Collection</h2>
+    <p>Engineered for durability. Designed for performance. Explore our 12 major product categories.</p>
   </div>
+  
   <div class="product-grid">
-    <!-- 1. Silicone Keypad -->
-    <div class="product-card">
-      <div class="product-img-wrapper">
-        <img src="https://www.keypadsilicone.com/uploadfile/202005/08/551c7a410e3133ac7aa46a1b2c864849.jpg" alt="Silicone Keypad" class="product-img">
-      </div>
-      <div class="product-info">
-        <h3>Silicone Keypad & Keyboard</h3>
-        <p>Professional conductive rubber keypads and membrane switches with custom tactile feedback and backlighting options.</p>
-      </div>
-      <div class="product-footer">
-        <span class="product-tag">Core Tech</span>
-        <a href="#contact" class="product-link">Inquiry →</a>
-      </div>
+    <!-- 1 -->
+    <div class="product-card reveal">
+      <div class="p-img-box"><img src="https://www.keypadsilicone.com/uploadfile/202005/08/551c7a410e3133ac7aa46a1b2c864849.jpg" class="p-img"></div>
+      <h3>Silicone Keypad</h3>
+      <p>Conductive rubber keypads and membrane switches with custom tactile feedback.</p>
+      <a href="#contact" class="product-cta">Inquiry Now →</a>
     </div>
-
-    <!-- 2. OEM Silicone -->
-    <div class="product-card">
-      <div class="product-img-wrapper">
-        <img src="https://www.keypadsilicone.com/uploadfile/202005/08/33a821473d242c4665240080de8a786b.JPG" alt="OEM Silicone" class="product-img">
-      </div>
-      <div class="product-info">
-        <h3>Custom OEM Silicone Parts</h3>
-        <p>Precision-engineered silicone components, dampers, and gaskets designed to meet your specific technical drawings.</p>
-      </div>
-      <div class="product-footer">
-        <span class="product-tag">OEM/ODM</span>
-        <a href="#contact" class="product-link">Inquiry →</a>
-      </div>
+    <!-- 2 -->
+    <div class="product-card reveal">
+      <div class="p-img-box"><img src="https://www.keypadsilicone.com/uploadfile/202005/08/33a821473d242c4665240080de8a786b.JPG" class="p-img"></div>
+      <h3>OEM Silicone Parts</h3>
+      <p>Precision-engineered dampers and technical gaskets for industrial use.</p>
+      <a href="#contact" class="product-cta">Inquiry Now →</a>
     </div>
-
-    <!-- 3. Golf Grips -->
-    <div class="product-card">
-      <div class="product-img-wrapper">
-        <img src="https://www.keypadsilicone.com/uploadfile/202305/15/fd7f89a7390f47221ce5fa6e3cb317e0.jpg" alt="Golf Grips" class="product-img">
-      </div>
-      <div class="product-info">
-        <h3>Performance Golf Grips</h3>
-        <p>Premium multi-texture silicone and rubber golf grips offering superior slip-resistance and all-weather durability.</p>
-      </div>
-      <div class="product-footer">
-        <span class="product-tag">Sports Pro</span>
-        <a href="#contact" class="product-link">Inquiry →</a>
-      </div>
+    <!-- 3 -->
+    <div class="product-card reveal">
+      <div class="p-img-box"><img src="https://www.keypadsilicone.com/uploadfile/202305/15/fd7f89a7390f47221ce5fa6e3cb317e0.jpg" class="p-img"></div>
+      <h3>Golf Grips</h3>
+      <p>Premium multi-texture grips with superior slip-resistance and durability.</p>
+      <a href="#contact" class="product-cta">Inquiry Now →</a>
     </div>
-
-    <!-- 4. Silicone Insulation -->
-    <div class="product-card">
-      <div class="product-img-wrapper">
-        <img src="https://www.keypadsilicone.com/uploadfile/201908/29/c0f463620d6fb398ee474d171fa0315d.JPG" alt="Silicone Insulation" class="product-img">
-      </div>
-      <div class="product-info">
-        <h3>High-Voltage Insulation</h3>
-        <p>Advanced silicone insulation bushings and sleeves for power electronics and high-temperature industrial environments.</p>
-      </div>
-      <div class="product-footer">
-        <span class="product-tag">Industrial</span>
-        <a href="#contact" class="product-link">Inquiry →</a>
-      </div>
+    <!-- 4 -->
+    <div class="product-card reveal">
+      <div class="p-img-box"><img src="https://www.keypadsilicone.com/uploadfile/201908/29/c0f463620d6fb398ee474d171fa0315d.JPG" class="p-img"></div>
+      <h3>Silicone Insulation</h3>
+      <p>High-voltage bushings and sleeves for power electronics and industrial use.</p>
+      <a href="#contact" class="product-cta">Inquiry Now →</a>
     </div>
-
-    <!-- 5. Baby Supplies -->
-    <div class="product-card">
-      <div class="product-img-wrapper">
-        <img src="https://www.keypadsilicone.com/uploadfile/201808/15/ffd4d8ef290c830869049dda7b1d1388.JPG" alt="Silicone Baby Supplies" class="product-img">
-      </div>
-      <div class="product-info">
-        <h3>Silicone Baby Supplies</h3>
-        <p>100% Food-grade, BPA-free silicone bibs, teethers, and feeding utensils for safety-conscious global markets.</p>
-      </div>
-      <div class="product-footer">
-        <span class="product-tag">Food Grade</span>
-        <a href="#contact" class="product-link">Inquiry →</a>
-      </div>
+    <!-- 5 -->
+    <div class="product-card reveal">
+      <div class="p-img-box"><img src="https://www.keypadsilicone.com/uploadfile/201808/15/ffd4d8ef290c830869049dda7b1d1388.JPG" class="p-img"></div>
+      <h3>Baby Supplies</h3>
+      <p>100% Food-grade, BPA-free silicone bibs and feeding utensils for safety.</p>
+      <a href="#contact" class="product-cta">Inquiry Now →</a>
     </div>
-
-    <!-- 6. Household Supplies -->
-    <div class="product-card">
-      <div class="product-img-wrapper">
-        <img src="https://www.keypadsilicone.com/uploadfile/201808/14/a25ea4293f4a579d7d772acb296a30fd.jpg" alt="Household Supplies" class="product-img">
-      </div>
-      <div class="product-info">
-        <h3>Household Silicone Items</h3>
-        <p>Creative and heat-resistant silicone kitchenware, mats, and daily essentials for modern home living.</p>
-      </div>
-      <div class="product-footer">
-        <span class="product-tag">Smart Home</span>
-        <a href="#contact" class="product-link">Inquiry →</a>
-      </div>
+    <!-- 6 -->
+    <div class="product-card reveal">
+      <div class="p-img-box"><img src="https://www.keypadsilicone.com/uploadfile/201808/14/a25ea4293f4a579d7d772acb296a30fd.jpg" class="p-img"></div>
+      <h3>Household Items</h3>
+      <p>Heat-resistant kitchenware and creative silicone mats for modern homes.</p>
+      <a href="#contact" class="product-cta">Inquiry Now →</a>
     </div>
-
-    <!-- 7. Silicone Watches -->
-    <div class="product-card">
-      <div class="product-img-wrapper">
-        <img src="https://www.keypadsilicone.com/uploadfile/201908/28/8c215426f498aada316d49b0a8fde08b.jpg" alt="Silicone Watches" class="product-img">
-      </div>
-      <div class="product-info">
-        <h3>Durable Silicone Watches</h3>
-        <p>High-quality integrated silicone watch straps and protective cases with customizable colors and textures.</p>
-      </div>
-      <div class="product-footer">
-        <span class="product-tag">Wearables</span>
-        <a href="#contact" class="product-link">Inquiry →</a>
-      </div>
+    <!-- 7 -->
+    <div class="product-card reveal">
+      <div class="p-img-box"><img src="https://www.keypadsilicone.com/uploadfile/201908/28/8c215426f498aada316d49b0a8fde08b.jpg" class="p-img"></div>
+      <h3>Silicone Watches</h3>
+      <p>Integrated watch straps and protective cases with customizable textures.</p>
+      <a href="#contact" class="product-cta">Inquiry Now →</a>
     </div>
-
-    <!-- 8. Silicone Bags -->
-    <div class="product-card">
-      <div class="product-img-wrapper">
-        <img src="https://www.keypadsilicone.com/uploadfile/201908/26/5bb7afec7ca32aca0eb3504eec07f28d.JPG" alt="Silicone Bags" class="product-img">
-      </div>
-      <div class="product-info">
-        <h3>Waterproof Silicone Bags</h3>
-        <p>Trendy and eco-friendly silicone coin purses, handbags, and multi-purpose waterproof storage pouches.</p>
-      </div>
-      <div class="product-footer">
-        <span class="product-tag">Fashion</span>
-        <a href="#contact" class="product-link">Inquiry →</a>
-      </div>
+    <!-- 8 -->
+    <div class="product-card reveal">
+      <div class="p-img-box"><img src="https://www.keypadsilicone.com/uploadfile/201908/26/5bb7afec7ca32aca0eb3504eec07f28d.JPG" class="p-img"></div>
+      <h3>Silicone Bags</h3>
+      <p>Trendy waterproof storage pouches and eco-friendly handbags.</p>
+      <a href="#contact" class="product-cta">Inquiry Now →</a>
     </div>
-
-    <!-- 9. Outdoor Accessories -->
-    <div class="product-card">
-      <div class="product-img-wrapper">
-        <img src="https://www.keypadsilicone.com/uploadfile/201707/19/4b5308912dc4af129de94e9c46ce9a51.jpg" alt="Outdoor Accessories" class="product-img">
-      </div>
-      <div class="product-info">
-        <h3>Outdoor & Travel Gear</h3>
-        <p>Collapsible silicone bottles, travel cups, and portable accessories for active outdoor lifestyles.</p>
-      </div>
-      <div class="product-footer">
-        <span class="product-tag">Travel</span>
-        <a href="#contact" class="product-link">Inquiry →</a>
-      </div>
+    <!-- 9 -->
+    <div class="product-card reveal">
+      <div class="p-img-box"><img src="https://www.keypadsilicone.com/uploadfile/201707/19/4b5308912dc4af129de94e9c46ce9a51.jpg" class="p-img"></div>
+      <h3>Outdoor Travel Gear</h3>
+      <p>Collapsible bottles and travel accessories for active outdoor lifestyles.</p>
+      <a href="#contact" class="product-cta">Inquiry Now →</a>
     </div>
-
-    <!-- 10. Beauty Items -->
-    <div class="product-card">
-      <div class="product-img-wrapper">
-        <img src="https://www.keypadsilicone.com/uploadfile/202305/12/c3f620ce57ded783eb5067997d8f5fa1.jpg" alt="Beauty Items" class="product-img">
-      </div>
-      <div class="product-info">
-        <h3>Silicone Beauty Tools</h3>
-        <p>Soft and hygienic silicone facial brushes, makeup applicators, and specialized personal care tools.</p>
-      </div>
-      <div class="product-footer">
-        <span class="product-tag">Personal Care</span>
-        <a href="#contact" class="product-link">Inquiry →</a>
-      </div>
+    <!-- 10 -->
+    <div class="product-card reveal">
+      <div class="p-img-box"><img src="https://www.keypadsilicone.com/uploadfile/202305/12/c3f620ce57ded783eb5067997d8f5fa1.jpg" class="p-img"></div>
+      <h3>Beauty Items</h3>
+      <p>Hygienic facial brushes and specialized tools for personal care.</p>
+      <a href="#contact" class="product-cta">Inquiry Now →</a>
     </div>
-
-    <!-- 11. Promotion Gifts -->
-    <div class="product-card">
-      <div class="product-img-wrapper">
-        <img src="https://www.keypadsilicone.com/uploadfile/202505/22/01c83e477096eb518bee5167387a831a.jpg" alt="Promotion Gift" class="product-img">
-      </div>
-      <div class="product-info">
-        <h3>Branded Promotion Gifts</h3>
-        <p>Customizable silicone wristbands, keychains, and creative branded gadgets for corporate events.</p>
-      </div>
-      <div class="product-footer">
-        <span class="product-tag">Promotion</span>
-        <a href="#contact" class="product-link">Inquiry →</a>
-      </div>
+    <!-- 11 -->
+    <div class="product-card reveal">
+      <div class="p-img-box"><img src="https://www.keypadsilicone.com/uploadfile/202505/22/01c83e477096eb518bee5167387a831a.jpg" class="p-img"></div>
+      <h3>Promotion Gifts</h3>
+      <p>Customizable wristbands and creative gadgets for corporate events.</p>
+      <a href="#contact" class="product-cta">Inquiry Now →</a>
     </div>
-
-    <!-- 12. OEM Rubber Products -->
-    <div class="product-card">
-      <div class="product-img-wrapper">
-        <img src="https://www.keypadsilicone.com/uploadfile/202506/21/92a556ec4e25428f4b3156be94692f7e.png" alt="OEM Rubber" class="product-img">
-      </div>
-      <div class="product-info">
-        <h3>Industrial Rubber Parts</h3>
-        <p>High-quality NBR, EPDM, and CR rubber gaskets, seals, and technical components for rugged applications.</p>
-      </div>
-      <div class="product-footer">
-        <span class="product-tag">Technical Rubber</span>
-        <a href="#contact" class="product-link">Inquiry →</a>
-      </div>
+    <!-- 12 -->
+    <div class="product-card reveal">
+      <div class="p-img-box"><img src="https://www.keypadsilicone.com/uploadfile/202506/21/92a556ec4e25428f4b3156be94692f7e.png" class="p-img"></div>
+      <h3>OEM Rubber Parts</h3>
+      <p>High-quality NBR and EPDM seals for technical and industrial use.</p>
+      <a href="#contact" class="product-cta">Inquiry Now →</a>
     </div>
   </div>
 </section>
 
-<!-- WHY US -->
-<section class="why-us" id="why-us">
-  <div class="section-header">
-    <div class="section-label">Why Choose Us</div>
-    <h2 class="section-title">Your Trusted Manufacturing Partner</h2>
-    <p class="section-sub">We combine 18 years of expertise with modern production technology to deliver world-class silicone products.</p>
-  </div>
-  <div class="features-grid">
-    <div class="feature-card">
-      <div class="feature-num">01</div>
-      <h3>🏗️ In-House Tooling &amp; Mold Manufacturing</h3>
-      <p>We own our mold shop, cutting your tooling time by 40% and costs by 30%. Molds delivered in as fast as 10 working days.</p>
-    </div>
-    <div class="feature-card">
-      <div class="feature-num">02</div>
-      <h3>🔬 Strict Quality Control</h3>
-      <p>Every batch undergoes 100% visual inspection, actuation force testing, and electrical conductivity checks before shipment.</p>
-    </div>
-    <div class="feature-card">
-      <div class="feature-num">03</div>
-      <h3>⚡ Fast Sample Turnaround</h3>
-      <p>Prototypes in 7 business days. We understand that speed-to-market is critical for your product launches.</p>
-    </div>
-    <div class="feature-card">
-      <div class="feature-num">04</div>
-      <h3>🌍 Global Export Experience</h3>
-      <p>We ship to 60+ countries weekly. Experienced with CE, UL, RoHS, REACH, and country-specific compliance requirements.</p>
-    </div>
-    <div class="feature-card">
-      <div class="feature-num">05</div>
-      <h3>🤝 Dedicated Account Manager</h3>
-      <p>Every client gets a dedicated engineer who understands your project. No call centers — direct technical communication.</p>
-    </div>
-    <div class="feature-card">
-      <div class="feature-num">06</div>
-      <h3>📦 Flexible MOQ &amp; Pricing</h3>
-      <p>MOQ from 500 pcs for standard products. Volume pricing available. We support startups and Fortune 500 companies equally.</p>
-    </div>
-  </div>
-</section>
-
-<!-- PROCESS -->
-<section class="process" id="process">
-  <div class="section-header">
-    <div class="section-label">How It Works</div>
-    <h2 class="section-title">From Inquiry to Delivery in 4 Steps</h2>
-  </div>
-  <div class="process-steps">
-    <div class="step">
-      <div class="step-num">1</div>
-      <h3>Submit Inquiry</h3>
-      <p>Send us your drawings, specifications, or samples. We respond within 24 hours.</p>
-    </div>
-    <div class="step">
-      <div class="step-num">2</div>
-      <h3>Engineering Review</h3>
-      <p>Our engineers review your design and provide DFM feedback and a detailed quote.</p>
-    </div>
-    <div class="step">
-      <div class="step-num">3</div>
-      <h3>Sample &amp; Approval</h3>
-      <p>We produce a prototype in 7 days. You test, approve, and we refine if needed.</p>
-    </div>
-    <div class="step">
-      <div class="step-num">4</div>
-      <h3>Mass Production</h3>
-      <p>Full production with QC reports, followed by timely delivery to your door.</p>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
 <section class="contact" id="contact">
-  <div class="section-header">
-    <div class="section-label">Contact Us</div>
-    <h2 class="section-title">Get Your Free Quote Today</h2>
-    <p class="section-sub">Tell us about your project and receive a detailed quote within 24 hours. No commitment required.</p>
-  </div>
-  <div class="contact-grid">
-    <div class="contact-info">
-      <h3>Get In Touch</h3>
-      <div class="contact-item">
-        <span class="contact-item-icon">📧</span>
-        <p><strong>Email</strong>silicone@xmydx.com</p>
-      </div>
-      <div class="contact-item">
-        <span class="contact-item-icon">📞</span>
-        <p><strong>Phone</strong>+86-592-5659128</p>
-      </div>
-      <div class="contact-item">
-        <span class="contact-item-icon">📱</span>
-        <p><strong>WhatsApp/Mobile</strong>+86-13606037597</p>
-      </div>
-      <div class="contact-item">
-        <span class="contact-item-icon">📍</span>
-        <p><strong>Address</strong>Xiamen, Fujian, China</p>
+  <div class="contact-container">
+    <div class="contact-info reveal">
+      <span class="about-tag">Contact Us</span>
+      <h2>Start Your Project with Experts</h2>
+      <p>Whether you need a custom prototype or high-volume production, our engineering team is ready to assist.</p>
+      <div style="margin-top: 3rem;">
+        <div style="margin-bottom: 2rem;">
+          <label style="display: block; color: var(--accent); font-weight: 800; font-size: 0.7rem; margin-bottom: 0.5rem; letter-spacing: 1px;">EMAIL</label>
+          <p style="font-size: 1.5rem; font-weight: 700;">silicone@xmydx.com</p>
+        </div>
+        <div>
+          <label style="display: block; color: var(--accent); font-weight: 800; font-size: 0.7rem; margin-bottom: 0.5rem; letter-spacing: 1px;">ADDRESS</label>
+          <p>No. 40, Xinglong Road, Huli District, Xiamen, China</p>
+        </div>
       </div>
     </div>
-    <div class="contact-form">
-      <h3>Request a Quote</h3>
-      <form action="https://formspree.io/f/silicone@xmydx.com" method="POST">
-        <div class="form-row">
-          <div class="form-group">
-            <label>Your Name *</label>
-            <input type="text" name="name" placeholder="John Smith" required />
-          </div>
-          <div class="form-group">
-            <label>Company</label>
-            <input type="text" name="company" placeholder="Acme Corp" />
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label>Email *</label>
-            <input type="email" name="email" placeholder="john@company.com" required />
-          </div>
-          <div class="form-group">
-            <label>Phone / WhatsApp</label>
-            <input type="text" name="phone" placeholder="+1 555 000 0000" />
-          </div>
+    
+    <div class="contact-form reveal">
+      <form action="https://formspree.io/f/mqakeewq" method="POST">
+        <div class="form-group">
+          <label>Full Name</label>
+          <input type="text" name="name" required placeholder="John Doe">
         </div>
         <div class="form-group">
-          <label>Product Type *</label>
-          <select name="product" required>
-            <option value="">-- Select Product --</option>
-            <option>Silicone Rubber Keypads</option>
-            <option>Medical Grade Keypads</option>
-            <option>Backlit / LED Keypads</option>
-            <option>Industrial Control Panels</option>
-            <option>Automotive Keypads</option>
-            <option>Waterproof Keypads</option>
-            <option>Custom OEM Components</option>
-            <option>Other</option>
+          <label>Business Email</label>
+          <input type="email" name="_replyto" required placeholder="john@company.com">
+        </div>
+        <div class="form-group">
+          <label>Inquiry Category</label>
+          <select name="category">
+            <option>Silicone Keypads</option>
+            <option>OEM Silicone Parts</option>
+            <option>Golf Grips</option>
+            <option>Other Services</option>
           </select>
         </div>
         <div class="form-group">
-          <label>Project Details *</label>
-          <textarea name="message" placeholder="Please describe your product requirements: quantity, size, color, special functions, timeline..." required></textarea>
+          <label>Message</label>
+          <textarea name="message" required placeholder="Tell us about your project requirements..."></textarea>
         </div>
-        <button type="submit" class="btn-submit">Send Inquiry →</button>
+        <button type="submit" class="btn-main" style="width: 100%; cursor: pointer; border: none;">Send Inquiry</button>
       </form>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
-  <p>© 2026 Keypad Silicone Manufacturer. All rights reserved. &nbsp;|&nbsp; <a href="mailto:silicone@xmydx.com">silicone@xmydx.com</a></p>
+  <div class="footer-logo">YIDEXIN<span>SILICONE</span></div>
+  <div class="footer-links">
+    <a href="#products">Collection</a>
+    <a href="#about">Factory</a>
+    <a href="#contact">Quote</a>
+  </div>
+  <p class="copy">&copy; 2026 Xiamen Yidexin Silicone Rubber Co., Ltd. All rights reserved.</p>
 </footer>
+
+<script>
+  // SCROLL REVEAL
+  const observerOptions = { threshold: 0.15 };
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // NAV BLUR ON SCROLL
+  window.addEventListener('scroll', () => {
+    const nav = document.querySelector('nav');
+    if (window.scrollY > 50) {
+      nav.style.background = 'rgba(10, 10, 15, 0.95)';
+    } else {
+      nav.style.background = 'rgba(10, 10, 15, 0.8)';
+    }
+  });
+</script>
 
 </body>
 </html>
