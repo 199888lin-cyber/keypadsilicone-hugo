@@ -134,7 +134,8 @@
       cursor: pointer;
     }
     .product-card:hover { box-shadow: 0 8px 32px rgba(26,86,219,0.12); transform: translateY(-4px); }
-    .product-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+    .product-img { width: 100%; height: 200px; object-fit: contain; background: #f9fafb; border-radius: 12px; margin-bottom: 1.25rem; }
+    .product-icon { display: none; }
     .product-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; }
     .product-card p { font-size: 0.9rem; color: var(--gray); line-height: 1.65; }
     .product-tag {
@@ -291,7 +292,7 @@
 <section class="about" id="about">
   <div class="about-content">
     <div class="about-image">
-      <span>🏢</span>
+      <img src="https://s.alicdn.com/@sc02/kf/H504e85e20f48465bb8fa8d7e362c9330N.jpg_250x250.jpg" alt="Xiamen Yidexin Factory" style="width: 100%; border-radius: 12px;">
       <p style="margin-top: 1rem; font-weight: 600; color: var(--blue);">Xiamen Yidexin Factory</p>
     </div>
     <div class="about-text">
@@ -329,76 +330,40 @@
   </div>
   <div class="product-grid">
     <div class="product-card">
-      <div class="product-icon">⌨️</div>
+      <img src="https://sc02.alicdn.com/kf/A8a1db67c03eb4ca9b1b2a1d00dd313aeo.png" alt="Silicone Keypad" class="product-img">
       <h3>Silicone Keypad & Keyboard</h3>
       <p>Custom conductive rubber keypads, backlit keyboards, and medical-grade control panels with various surface coatings.</p>
       <span class="product-tag">Core Product</span>
     </div>
     <div class="product-card">
-      <div class="product-icon">🛠️</div>
+      <img src="https://sc02.alicdn.com/kf/A03f20d08adcb42268fa7c08ab20f8c85q.png" alt="OEM Silicone" class="product-img">
       <h3>OEM Silicone Products</h3>
       <p>Custom-engineered silicone components, dampers, and industrial parts manufactured to your specific drawings.</p>
       <span class="product-tag">OEM Service</span>
     </div>
     <div class="product-card">
-      <div class="product-icon">⛳</div>
-      <h3>Golf Grips</h3>
-      <p>Premium silicone and rubber golf grips with superior texture, durability, and anti-slip performance for sports equipment.</p>
-      <span class="product-tag">Sports</span>
-    </div>
-    <div class="product-card">
-      <div class="product-icon">🔌</div>
-      <h3>Silicone Insulation Bushing</h3>
-      <p>High-voltage insulation sleeves and bushings for electrical applications, offering excellent heat and fire resistance.</p>
+      <img src="https://sc02.alicdn.com/kf/A6a83253e51e44ec6aecad462c31a1f1bb.png" alt="Air Conditioner Keypad" class="product-img">
+      <h3>Air Conditioner Keypads</h3>
+      <p>Precision silicone keypads designed for air conditioning remote controls and wall-mounted panels.</p>
       <span class="product-tag">Industrial</span>
     </div>
     <div class="product-card">
-      <div class="product-icon">👶</div>
-      <h3>Silicone Baby Supplies</h3>
-      <p>Food-grade, BPA-free silicone products including bibs, teether toys, and feeding sets, meeting international safety standards.</p>
-      <span class="product-tag">Food Grade</span>
+      <img src="https://sc02.alicdn.com/kf/Ad5bab53685ea4f7fb1a4680b11d694f1N.png" alt="Remote Control Keypad" class="product-img">
+      <h3>Remote Control Keypads</h3>
+      <p>High-quality silicone buttons for TV, audio, and smart home remote controls with long life cycles.</p>
+      <span class="product-tag">Consumer</span>
     </div>
     <div class="product-card">
-      <div class="product-icon">🏠</div>
-      <h3>Household Supplies</h3>
-      <p>Creative silicone kitchenware, heat-resistant mats, and home organization tools designed for modern living.</p>
-      <span class="product-tag">Daily Use</span>
+      <img src="https://sc02.alicdn.com/kf/A7b7f7200f4bb4ecea5f982443ed875c2S.png" alt="Rubber Keypad" class="product-img">
+      <h3>Rubber Keypad Solutions</h3>
+      <p>Complete range of rubber button pads with shore hardness from 20 to 80, customized for your device.</p>
+      <span class="product-tag">Manufacturing</span>
     </div>
     <div class="product-card">
-      <div class="product-icon">⌚</div>
-      <h3>Silicone Watches</h3>
-      <p>Durable and stylish silicone watch straps and integrated watch cases for sport and fashion timepieces.</p>
-      <span class="product-tag">Fashion</span>
-    </div>
-    <div class="product-card">
-      <div class="product-icon">👜</div>
-      <h3>Silicone Bags</h3>
-      <p>Waterproof silicone pouches, coin purses, and makeup bags with vibrant colors and soft-touch finishes.</p>
-      <span class="product-tag">Accessories</span>
-    </div>
-    <div class="product-card">
-      <div class="product-icon">⛺</div>
-      <h3>Outdoor & Travel Accessories</h3>
-      <p>Portable silicone bottles, folding cups, and travel organizers designed for durability and space-saving.</p>
-      <span class="product-tag">Travel</span>
-    </div>
-    <div class="product-card">
-      <div class="product-icon">💄</div>
-      <h3>Beauty Items</h3>
-      <p>Silicone facial brushes, makeup applicator tools, and spa accessories for professional and home beauty routines.</p>
-      <span class="product-tag">Beauty</span>
-    </div>
-    <div class="product-card">
-      <div class="product-icon">🎁</div>
-      <h3>Silicone Promotion Gift</h3>
-      <p>Customizable silicone wristbands, keychains, and branded gadgets perfect for corporate events and marketing.</p>
-      <span class="product-tag">Promotion</span>
-    </div>
-    <div class="product-card">
-      <div class="product-icon">⚙️</div>
-      <h3>OEM Rubber Products</h3>
-      <p>EPDM, NBR, and CR rubber gaskets, seals, and technical parts for automotive and industrial machinery.</p>
-      <span class="product-tag">Custom Rubber</span>
+      <img src="https://sc02.alicdn.com/kf/A2798bce5f1984728a79b75632bb0e441U.png" alt="Silicone Button Pad" class="product-img">
+      <h3>Silicone Button Pads</h3>
+      <p>Durable and tactile silicone button solutions for various switching applications and electronic interfaces.</p>
+      <span class="product-tag">OEM/ODM</span>
     </div>
   </div>
 </section>
