@@ -67,6 +67,9 @@
       transition: var(--transition);
     }
     .nav-cta:hover { background: var(--accent); color: #000; }
+    
+    .menu-toggle { display: none; cursor: pointer; flex-direction: column; gap: 6px; }
+    .menu-toggle span { width: 28px; height: 2px; background: #fff; transition: 0.3s; }
 
     /* HERO */
     .hero {
@@ -185,15 +188,42 @@
     .footer-links a { color: var(--text-dim); text-decoration: none; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; }
     .copy { font-size: 0.75rem; color: rgba(255,255,255,0.3); }
 
-    /* MOBILE */
+    /* MOBILE ADAPTATION */
     @media (max-width: 1024px) {
-      .hero h1 { font-size: 3.5rem; }
+      nav { padding: 0 5%; height: 70px; }
+      .nav-links {
+        position: fixed; top: 70px; left: -100%; width: 100%; height: calc(100vh - 70px);
+        background: var(--bg); flex-direction: column; align-items: center; justify-content: center;
+        transition: 0.5s cubic-bezier(0.16, 1, 0.3, 1); z-index: 999;
+      }
+      .nav-links.active { left: 0; }
+      .menu-toggle { display: flex; order: 3; }
+      .nav-cta { display: none; }
+      
+      .hero h1 { font-size: 3.2rem; }
       .about-grid, .contact-container { grid-template-columns: 1fr; gap: 4rem; }
-      .nav-links { display: none; }
     }
+
     @media (max-width: 768px) {
-      .hero h1 { font-size: 2.5rem; }
-      section { padding: 80px 5%; }
+      section { padding: 80px 20px; }
+      .hero { height: auto; padding: 160px 20px 100px; }
+      .hero h1 { font-size: 2.4rem; letter-spacing: -1px; }
+      .hero p { font-size: 1rem; margin-bottom: 2.5rem; }
+      .hero-btns { flex-direction: column; width: 100%; }
+      .btn-main { width: 100%; text-align: center; }
+      
+      .section-head h2 { font-size: 2.2rem; }
+      .about-text h2 { font-size: 2.2rem; }
+      .trust-grid { grid-template-columns: 1fr 1fr; display: grid; }
+      .trust-val { font-size: 2rem; }
+      
+      .product-grid { grid-template-columns: 1fr; }
+      .product-card { padding: 1.5rem; }
+      .p-img-box { height: 220px; }
+      
+      .contact-form { padding: 2rem; border-radius: 20px; }
+      .contact-info h2 { font-size: 2rem; }
+      .contact-info p { font-size: 1rem; }
     }
   </style>
 </head>
@@ -206,6 +236,11 @@
     <li><a href="#about">Our Factory</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
+  <div class="menu-toggle" id="mobile-menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
   <a href="#contact" class="nav-cta">Inquiry</a>
 </nav>
 
@@ -415,6 +450,28 @@
 </footer>
 
 <script>
+  // MOBILE MENU TOGGLE
+  const mobileMenu = document.getElementById('mobile-menu');
+  const navLinks = document.querySelector('.nav-links');
+
+  mobileMenu.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    // Animate hamburger
+    const spans = mobileMenu.querySelectorAll('span');
+    spans[0].style.transform = navLinks.classList.contains('active') ? 'rotate(45deg) translate(5px, 6px)' : 'none';
+    spans[1].style.opacity = navLinks.classList.contains('active') ? '0' : '1';
+    spans[2].style.transform = navLinks.classList.contains('active') ? 'rotate(-45deg) translate(5px, -6px)' : 'none';
+  });
+
+  // Close menu on link click
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('active');
+      const spans = mobileMenu.querySelectorAll('span');
+      spans.forEach(s => { s.style.transform = 'none'; s.style.opacity = '1'; });
+    });
+  });
+
   // SCROLL REVEAL
   const observerOptions = { threshold: 0.15 };
   const observer = new IntersectionObserver((entries) => {
