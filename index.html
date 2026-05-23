@@ -226,8 +226,25 @@
     footer a { color: rgba(255,255,255,0.5); text-decoration: none; }
     footer a:hover { color: var(--white); }
 
+    /* VIDEO SECTION */
+    .video-section { background: var(--dark); color: var(--white); padding: 80px 5%; text-align: center; }
+    .video-container { max-width: 900px; margin: 0 auto; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.5); background: #000; }
+    .video-container video { width: 100%; display: block; }
+    .video-info { margin-top: 2rem; max-width: 700px; margin-left: auto; margin-right: auto; }
+    .video-info h2 { color: var(--white); margin-bottom: 1rem; }
+    .video-info p { color: rgba(255,255,255,0.7); line-height: 1.6; }
+
+    /* ABOUT SECTION */
+    .about-content { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+    .about-image { background: var(--gray-light); border-radius: 20px; padding: 2rem; text-align: center; }
+    .about-image span { font-size: 5rem; }
+    .about-text h2 { margin-bottom: 1.5rem; }
+    .about-text p { margin-bottom: 1.2rem; color: var(--gray); line-height: 1.8; }
+
     /* RESPONSIVE */
     @media (max-width: 900px) {
+      .about-content { grid-template-columns: 1fr; }
+    }
       .hero { flex-direction: column; padding: 60px 5%; }
       .hero h1 { font-size: 2.2rem; }
       .hero-visual { max-width: 100%; }
@@ -267,25 +284,41 @@
     <div class="hero-btns">
       <a href="#contact" class="btn-primary">Request Free Quote</a>
       <a href="#products" class="btn-outline">View Products</a>
-    </div>
-    <div class="hero-stats">
-      <div class="stat-item"><h3>20+</h3><p>Years Experience</p></div>
-      <div class="stat-item"><h3>1000+</h3><p>Design Projects</p></div>
-      <div class="stat-item"><h3>7 Days</h3><p>Sample Turnaround</p></div>
-      <div class="stat-item"><h3>ISO</h3><p>9001 Certified</p></div>
-    </div>
-  </div>
-  <div class="hero-visual">
-    <div class="product-chip active">🔲 Silicone Keypads</div>
-    <div class="product-chip">⚕️ Medical Grade</div>
-    <div class="product-chip">🏭 Industrial Controls</div>
-    <div class="product-chip">🚗 Automotive</div>
-    <div class="product-chip">📱 Consumer Electronics</div>
-    <div class="product-chip">🎮 Remote Controls</div>
-    <div class="product-chip">🔧 Custom OEM/ODM</div>
-    <div class="product-chip">✅ ISO 9001</div>
   </div>
 </section>
+
+<!-- ABOUT US -->
+<section class="about" id="about">
+  <div class="about-content">
+    <div class="about-image">
+      <span>🏢</span>
+      <p style="margin-top: 1rem; font-weight: 600; color: var(--blue);">Xiamen Yidexin Factory</p>
+    </div>
+    <div class="about-text">
+      <div class="section-label">About Yidexin</div>
+      <h2 class="section-title">20 Years of Excellence in Silicone Manufacturing</h2>
+      <p>Founded in 2005, Xiamen Yidexin Silicone Rubber Co., Ltd. has grown into a leading professional manufacturer of silicone rubber products in China. Our facility covers over 5,000 square meters and is equipped with advanced compression molding, liquid injection molding (LIM), and CNC tooling machines.</p>
+      <p>We specialize in custom silicone keypads, medical-grade components, and high-performance rubber seals. With our in-house mold design and manufacturing team, we provide rapid prototyping and cost-effective solutions for clients across medical, automotive, industrial, and consumer electronics sectors.</p>
+      <p>Our commitment to quality is backed by ISO 9001:2015 certification. We ensure every product meets the highest standards through rigorous testing, including life-cycle testing, actuation force measurement, and environmental resistance analysis.</p>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO SHOWCASE -->
+<section class="video-section">
+  <div class="video-info">
+    <div class="section-label" style="color: #93c5fd;">Factory Tour</div>
+    <h2>See Our Production Process in Action</h2>
+    <p>Watch our state-of-the-art facility in Xiamen, showcasing our precision molding, clean-room assembly, and rigorous quality control procedures.</p>
+  </div>
+  <div class="video-container" style="margin-top: 3rem;">
+    <video controls poster="assets/video/poster.jpg">
+      <source src="assets/video/factory.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+</section>
+
 
 <!-- TRUST BAR -->
 <div class="trust-bar">
