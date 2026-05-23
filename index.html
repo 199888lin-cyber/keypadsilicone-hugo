@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Keypad Silicone | Custom Silicone Keypad Manufacturer</title>
+  <meta name="description" content="Professional custom silicone keypad manufacturer. OEM/ODM services for medical, industrial, consumer electronics. ISO certified. Get a free quote today." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue: #1a56db;
+      --blue-dark: #1341b1;
+      --blue-light: #e8f0fe;
+      --gray: #6b7280;
+      --gray-light: #f3f4f6;
+      --dark: #111827;
+      --white: #ffffff;
+      --radius: 10px;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; color: var(--dark); background: var(--white); }
+
+    /* NAV */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #e5e7eb;
+      padding: 0 5%;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 68px;
+    }
+    .logo { font-size: 1.25rem; font-weight: 800; color: var(--blue); letter-spacing: -0.5px; }
+    .logo span { color: var(--dark); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { text-decoration: none; color: var(--gray); font-weight: 500; font-size: 0.95rem; transition: color .2s; }
+    .nav-links a:hover { color: var(--blue); }
+    .nav-cta {
+      background: var(--blue); color: var(--white); border: none;
+      padding: 10px 22px; border-radius: var(--radius);
+      font-weight: 600; font-size: 0.9rem; cursor: pointer; text-decoration: none;
+      transition: background .2s;
+    }
+    .nav-cta:hover { background: var(--blue-dark); }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 60%, #1a56db 100%);
+      color: var(--white);
+      padding: 100px 5% 90px;
+      display: flex; align-items: center; gap: 4rem;
+    }
+    .hero-text { flex: 1; max-width: 600px; }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      padding: 6px 16px; border-radius: 50px;
+      font-size: 0.82rem; font-weight: 600; letter-spacing: 1px;
+      text-transform: uppercase; margin-bottom: 1.5rem;
+    }
+    .hero h1 { font-size: 3.2rem; font-weight: 800; line-height: 1.15; margin-bottom: 1.2rem; letter-spacing: -1px; }
+    .hero h1 em { font-style: normal; color: #93c5fd; }
+    .hero p { font-size: 1.15rem; color: rgba(255,255,255,0.8); line-height: 1.75; margin-bottom: 2.5rem; }
+    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--white); color: var(--blue);
+      padding: 14px 32px; border-radius: var(--radius);
+      font-weight: 700; font-size: 1rem; text-decoration: none;
+      transition: transform .2s, box-shadow .2s;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.3); }
+    .btn-outline {
+      border: 2px solid rgba(255,255,255,0.5); color: var(--white);
+      padding: 14px 32px; border-radius: var(--radius);
+      font-weight: 600; font-size: 1rem; text-decoration: none;
+      transition: border-color .2s, background .2s;
+    }
+    .btn-outline:hover { border-color: var(--white); background: rgba(255,255,255,0.1); }
+    .hero-stats { display: flex; gap: 2.5rem; margin-top: 3rem; }
+    .stat-item h3 { font-size: 2rem; font-weight: 800; color: #93c5fd; }
+    .stat-item p { font-size: 0.85rem; color: rgba(255,255,255,0.65); margin-top: 2px; }
+    .hero-visual {
+      flex: 1; max-width: 440px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 20px; padding: 2.5rem;
+      display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;
+    }
+    .product-chip {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 50px; padding: 10px 20px;
+      font-size: 0.88rem; font-weight: 500; color: rgba(255,255,255,0.9);
+    }
+    .product-chip.active { background: rgba(255,255,255,0.25); border-color: rgba(255,255,255,0.5); }
+
+    /* SECTION BASE */
+    section { padding: 90px 5%; }
+    .section-label {
+      font-size: 0.8rem; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--blue); margin-bottom: 0.8rem;
+    }
+    .section-title { font-size: 2.3rem; font-weight: 800; line-height: 1.2; letter-spacing: -0.5px; margin-bottom: 1rem; }
+    .section-sub { font-size: 1.05rem; color: var(--gray); line-height: 1.7; max-width: 600px; }
+    .section-header { text-align: center; margin-bottom: 3.5rem; }
+    .section-header .section-sub { margin: 0 auto; }
+
+    /* TRUST BAR */
+    .trust-bar {
+      background: var(--gray-light); padding: 28px 5%;
+      display: flex; align-items: center; justify-content: center;
+      gap: 3rem; flex-wrap: wrap;
+    }
+    .trust-item { display: flex; align-items: center; gap: 10px; }
+    .trust-icon { font-size: 1.4rem; }
+    .trust-text { font-size: 0.9rem; font-weight: 600; color: var(--dark); }
+
+    /* PRODUCTS */
+    .products { background: var(--white); }
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .product-card {
+      border: 1px solid #e5e7eb; border-radius: 16px;
+      padding: 2rem; transition: box-shadow .25s, transform .25s;
+      cursor: pointer;
+    }
+    .product-card:hover { box-shadow: 0 8px 32px rgba(26,86,219,0.12); transform: translateY(-4px); }
+    .product-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+    .product-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .product-card p { font-size: 0.9rem; color: var(--gray); line-height: 1.65; }
+    .product-tag {
+      display: inline-block; margin-top: 1rem;
+      background: var(--blue-light); color: var(--blue);
+      padding: 4px 12px; border-radius: 50px;
+      font-size: 0.78rem; font-weight: 600;
+    }
+
+    /* WHY US */
+    .why-us { background: #f8faff; }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    .feature-card {
+      background: var(--white); border-radius: 16px; padding: 2rem;
+      border-left: 4px solid var(--blue);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    }
+    .feature-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.6rem; }
+    .feature-card p { font-size: 0.9rem; color: var(--gray); line-height: 1.65; }
+    .feature-num { font-size: 2rem; font-weight: 800; color: var(--blue); opacity: 0.15; margin-bottom: 0.5rem; }
+
+    /* PROCESS */
+    .process { background: var(--white); }
+    .process-steps { display: flex; gap: 0; flex-wrap: nowrap; overflow-x: auto; padding-bottom: 1rem; }
+    .step {
+      flex: 1; min-width: 180px;
+      text-align: center; padding: 1.5rem 1rem; position: relative;
+    }
+    .step:not(:last-child)::after {
+      content: '→';
+      position: absolute; right: -12px; top: 2rem;
+      font-size: 1.5rem; color: var(--blue); font-weight: 700;
+    }
+    .step-num {
+      width: 52px; height: 52px;
+      background: var(--blue); color: var(--white);
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem; font-weight: 800; margin: 0 auto 1rem;
+    }
+    .step h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.4rem; }
+    .step p { font-size: 0.82rem; color: var(--gray); }
+
+    /* CONTACT */
+    .contact { background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%); color: var(--white); }
+    .contact .section-title { color: var(--white); }
+    .contact .section-sub { color: rgba(255,255,255,0.7); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+    .contact-info h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 1.5rem; color: #93c5fd; }
+    .contact-item { display: flex; gap: 1rem; margin-bottom: 1.2rem; align-items: flex-start; }
+    .contact-item-icon { font-size: 1.3rem; margin-top: 2px; }
+    .contact-item p { font-size: 0.95rem; color: rgba(255,255,255,0.8); line-height: 1.6; }
+    .contact-item strong { color: var(--white); display: block; }
+    .contact-form { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.15); border-radius: 16px; padding: 2.5rem; }
+    .contact-form h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 1.5rem; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+    .form-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 1rem; }
+    .form-group label { font-size: 0.85rem; font-weight: 600; color: rgba(255,255,255,0.8); }
+    .form-group input, .form-group select, .form-group textarea {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 8px; padding: 12px 14px;
+      color: var(--white); font-size: 0.9rem; font-family: 'Inter', sans-serif;
+      transition: border-color .2s;
+    }
+    .form-group input::placeholder, .form-group textarea::placeholder { color: rgba(255,255,255,0.4); }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+      outline: none; border-color: #93c5fd;
+    }
+    .form-group select option { background: #1e3a8a; color: var(--white); }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    .btn-submit {
+      width: 100%; background: var(--blue); color: var(--white);
+      border: none; padding: 14px; border-radius: var(--radius);
+      font-weight: 700; font-size: 1rem; cursor: pointer;
+      transition: background .2s, transform .2s;
+    }
+    .btn-submit:hover { background: var(--blue-dark); transform: translateY(-1px); }
+
+    /* FOOTER */
+    footer {
+      background: #070e1a; color: rgba(255,255,255,0.5);
+      text-align: center; padding: 2rem 5%;
+      font-size: 0.85rem;
+    }
+    footer a { color: rgba(255,255,255,0.5); text-decoration: none; }
+    footer a:hover { color: var(--white); }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .hero { flex-direction: column; padding: 60px 5%; }
+      .hero h1 { font-size: 2.2rem; }
+      .hero-visual { max-width: 100%; }
+      .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .form-row { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .process-steps { flex-wrap: wrap; }
+      .step:not(:last-child)::after { display: none; }
+    }
+    @media (max-width: 600px) {
+      .section-title { font-size: 1.8rem; }
+      .hero-stats { gap: 1.5rem; flex-wrap: wrap; }
+      .trust-bar { gap: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">Keypad<span>Silicone</span></div>
+  <ul class="nav-links">
+    <li><a href="#products">Products</a></li>
+    <li><a href="#why-us">Why Us</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Get Free Quote</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-text">
+    <div class="hero-badge">🏭 ISO 9001 Certified Manufacturer</div>
+    <h1>Custom Silicone Keypads &amp; <em>Rubber Products</em> Since 2005</h1>
+    <p>Precision-engineered silicone keypads for medical devices, industrial controls, consumer electronics, and automotive applications. OEM &amp; ODM, MOQ from 500 pcs.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-primary">Request Free Quote</a>
+      <a href="#products" class="btn-outline">View Products</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item"><h3>18+</h3><p>Years Experience</p></div>
+      <div class="stat-item"><h3>500+</h3><p>Global Clients</p></div>
+      <div class="stat-item"><h3>50M+</h3><p>Units Shipped</p></div>
+      <div class="stat-item"><h3>98%</h3><p>On-Time Delivery</p></div>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="product-chip active">🔲 Silicone Keypads</div>
+    <div class="product-chip">⚕️ Medical Grade</div>
+    <div class="product-chip">🏭 Industrial Controls</div>
+    <div class="product-chip">🚗 Automotive</div>
+    <div class="product-chip">📱 Consumer Electronics</div>
+    <div class="product-chip">🎮 Remote Controls</div>
+    <div class="product-chip">🔧 Custom OEM/ODM</div>
+    <div class="product-chip">✅ ISO 9001</div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-item"><span class="trust-icon">✅</span><span class="trust-text">ISO 9001:2015 Certified</span></div>
+  <div class="trust-item"><span class="trust-icon">🚀</span><span class="trust-text">Sample in 7 Days</span></div>
+  <div class="trust-item"><span class="trust-icon">🌍</span><span class="trust-text">Export to 60+ Countries</span></div>
+  <div class="trust-item"><span class="trust-icon">🔬</span><span class="trust-text">100% Quality Inspection</span></div>
+  <div class="trust-item"><span class="trust-icon">💬</span><span class="trust-text">24/7 Engineer Support</span></div>
+</div>
+
+<!-- PRODUCTS -->
+<section class="products" id="products">
+  <div class="section-header">
+    <div class="section-label">Our Products</div>
+    <h2 class="section-title">Full Range of Silicone Solutions</h2>
+    <p class="section-sub">From standard keypads to fully custom silicone components, we deliver precision parts for every industry.</p>
+  </div>
+  <div class="product-grid">
+    <div class="product-card">
+      <div class="product-icon">🔲</div>
+      <h3>Silicone Rubber Keypads</h3>
+      <p>Custom conductive and non-conductive silicone keypads with carbon pill or gold cross-pill contacts. Available in any shape, color, and actuation force.</p>
+      <span class="product-tag">Most Popular</span>
+    </div>
+    <div class="product-card">
+      <div class="product-icon">⚕️</div>
+      <h3>Medical Grade Keypads</h3>
+      <p>FDA-compliant, biocompatible silicone for medical devices. IP67 sealed, autoclavable options available for surgical and diagnostic equipment.</p>
+      <span class="product-tag">Medical Grade</span>
+    </div>
+    <div class="product-card">
+      <div class="product-icon">💡</div>
+      <h3>Backlit & LED Keypads</h3>
+      <p>Laser-etched or translucent silicone keypads optimized for uniform backlighting. Perfect for low-light environments and premium aesthetics.</p>
+      <span class="product-tag">Popular</span>
+    </div>
+    <div class="product-card">
+      <div class="product-icon">🏭</div>
+      <h3>Industrial Control Panels</h3>
+      <p>Heavy-duty keypads rated for -40°C to 200°C, resistant to oils, UV, and harsh chemicals. Designed for PLCs and industrial controllers.</p>
+      <span class="product-tag">Industrial</span>
+    </div>
+    <div class="product-card">
+      <div class="product-icon">🚗</div>
+      <h3>Automotive Keypads</h3>
+      <p>IATF 16949 compliant silicone components for steering wheel controls, dashboard buttons, and interior trim. Meets FMVSS standards.</p>
+      <span class="product-tag">Automotive</span>
+    </div>
+    <div class="product-card">
+      <div class="product-icon">🎮</div>
+      <h3>Consumer Electronics</h3>
+      <p>High-precision keypads for remote controls, game controllers, smart home devices, and wearables. Excellent tactile feedback and durability.</p>
+      <span class="product-tag">High Volume</span>
+    </div>
+    <div class="product-card">
+      <div class="product-icon">🌊</div>
+      <h3>Waterproof Sealing Keypads</h3>
+      <p>IP65–IP68 rated silicone membrane keypads with integrated gaskets. Ideal for outdoor equipment, marine electronics, and portable devices.</p>
+      <span class="product-tag">IP68 Rated</span>
+    </div>
+    <div class="product-card">
+      <div class="product-icon">🔧</div>
+      <h3>Custom OEM Components</h3>
+      <p>Silicone bumpers, grommets, seals, and protective covers. We manufacture any custom silicone part from your drawings or samples.</p>
+      <span class="product-tag">OEM/ODM</span>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why-us" id="why-us">
+  <div class="section-header">
+    <div class="section-label">Why Choose Us</div>
+    <h2 class="section-title">Your Trusted Manufacturing Partner</h2>
+    <p class="section-sub">We combine 18 years of expertise with modern production technology to deliver world-class silicone products.</p>
+  </div>
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="feature-num">01</div>
+      <h3>🏗️ In-House Tooling &amp; Mold Manufacturing</h3>
+      <p>We own our mold shop, cutting your tooling time by 40% and costs by 30%. Molds delivered in as fast as 10 working days.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-num">02</div>
+      <h3>🔬 Strict Quality Control</h3>
+      <p>Every batch undergoes 100% visual inspection, actuation force testing, and electrical conductivity checks before shipment.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-num">03</div>
+      <h3>⚡ Fast Sample Turnaround</h3>
+      <p>Prototypes in 7 business days. We understand that speed-to-market is critical for your product launches.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-num">04</div>
+      <h3>🌍 Global Export Experience</h3>
+      <p>We ship to 60+ countries weekly. Experienced with CE, UL, RoHS, REACH, and country-specific compliance requirements.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-num">05</div>
+      <h3>🤝 Dedicated Account Manager</h3>
+      <p>Every client gets a dedicated engineer who understands your project. No call centers — direct technical communication.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-num">06</div>
+      <h3>📦 Flexible MOQ &amp; Pricing</h3>
+      <p>MOQ from 500 pcs for standard products. Volume pricing available. We support startups and Fortune 500 companies equally.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process" id="process">
+  <div class="section-header">
+    <div class="section-label">How It Works</div>
+    <h2 class="section-title">From Inquiry to Delivery in 4 Steps</h2>
+  </div>
+  <div class="process-steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <h3>Submit Inquiry</h3>
+      <p>Send us your drawings, specifications, or samples. We respond within 24 hours.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <h3>Engineering Review</h3>
+      <p>Our engineers review your design and provide DFM feedback and a detailed quote.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <h3>Sample &amp; Approval</h3>
+      <p>We produce a prototype in 7 days. You test, approve, and we refine if needed.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <h3>Mass Production</h3>
+      <p>Full production with QC reports, followed by timely delivery to your door.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="section-header">
+    <div class="section-label">Contact Us</div>
+    <h2 class="section-title">Get Your Free Quote Today</h2>
+    <p class="section-sub">Tell us about your project and receive a detailed quote within 24 hours. No commitment required.</p>
+  </div>
+  <div class="contact-grid">
+    <div class="contact-info">
+      <h3>Get In Touch</h3>
+      <div class="contact-item">
+        <span class="contact-item-icon">📧</span>
+        <p><strong>Email</strong>silicone@xmydx.com</p>
+      </div>
+      <div class="contact-item">
+        <span class="contact-item-icon">🌐</span>
+        <p><strong>Website</strong>www.keypadsilicone.com</p>
+      </div>
+      <div class="contact-item">
+        <span class="contact-item-icon">⏰</span>
+        <p><strong>Response Time</strong>Within 24 hours on business days</p>
+      </div>
+      <div class="contact-item">
+        <span class="contact-item-icon">📦</span>
+        <p><strong>Minimum Order</strong>500 pcs (standard products)</p>
+      </div>
+      <div class="contact-item">
+        <span class="contact-item-icon">🚀</span>
+        <p><strong>Sample Lead Time</strong>7 business days</p>
+      </div>
+      <div class="contact-item">
+        <span class="contact-item-icon">🏭</span>
+        <p><strong>Production Lead Time</strong>15–25 business days after sample approval</p>
+      </div>
+    </div>
+    <div class="contact-form">
+      <h3>Request a Quote</h3>
+      <form action="https://formspree.io/f/silicone@xmydx.com" method="POST">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Your Name *</label>
+            <input type="text" name="name" placeholder="John Smith" required />
+          </div>
+          <div class="form-group">
+            <label>Company</label>
+            <input type="text" name="company" placeholder="Acme Corp" />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Email *</label>
+            <input type="email" name="email" placeholder="john@company.com" required />
+          </div>
+          <div class="form-group">
+            <label>Phone / WhatsApp</label>
+            <input type="text" name="phone" placeholder="+1 555 000 0000" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Product Type *</label>
+          <select name="product" required>
+            <option value="">-- Select Product --</option>
+            <option>Silicone Rubber Keypads</option>
+            <option>Medical Grade Keypads</option>
+            <option>Backlit / LED Keypads</option>
+            <option>Industrial Control Panels</option>
+            <option>Automotive Keypads</option>
+            <option>Waterproof Keypads</option>
+            <option>Custom OEM Components</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Project Details *</label>
+          <textarea name="message" placeholder="Please describe your product requirements: quantity, size, color, special functions, timeline..." required></textarea>
+        </div>
+        <button type="submit" class="btn-submit">Send Inquiry →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 Keypad Silicone Manufacturer. All rights reserved. &nbsp;|&nbsp; <a href="mailto:silicone@xmydx.com">silicone@xmydx.com</a></p>
+</footer>
+
+</body>
+</html>
