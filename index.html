@@ -157,6 +157,52 @@
       text-transform: uppercase; letter-spacing: 1px;
     }
 
+    /* FINISHING OPTIONS */
+    .finishing { background: #0A0A0F; border-top: 1px solid var(--border); }
+    .finishing-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 2rem; }
+    .finish-card {
+      background: var(--card-bg); border: 1px solid var(--border);
+      border-radius: 16px; padding: 2rem; transition: var(--transition);
+    }
+    .finish-card:hover { border-color: var(--gold-border); transform: translateY(-5px); }
+    .finish-card h4 { font-family: var(--font-head); font-size: 1.15rem; color: var(--accent); margin-bottom: 0.75rem; }
+    .finish-card p { color: var(--text-dim); font-size: 0.88rem; line-height: 1.6; }
+
+    /* COMPARISON SECTION */
+    .comparison { background: #060608; border-top: 1px solid var(--border); }
+    .comp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
+    .comp-box { background: var(--card-bg); border-radius: 24px; padding: 3rem; border: 1px solid var(--border); }
+    .comp-box.premium { border-color: var(--gold-border); background: linear-gradient(135deg, #14141D 0%, #1c1c2b 100%); }
+    .comp-box h3 { font-family: var(--font-head); font-size: 1.8rem; margin-bottom: 2rem; }
+    .comp-box.premium h3 { color: var(--accent); }
+    .comp-list { list-style: none; }
+    .comp-list li { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 1.5rem; font-size: 1rem; color: var(--text-dim); }
+    .comp-list li span { color: var(--accent); font-weight: 800; }
+    .comp-list.negative li span { color: #ef4444; }
+
+    /* SECTORS/LOGOS BAR */
+    .sectors { background: #060608; padding: 60px 8%; border-bottom: 1px solid var(--border); text-align: center; }
+    .sectors-title { font-size: 0.75rem; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--text-dim); margin-bottom: 2rem; }
+    .sectors-grid { display: flex; justify-content: center; gap: 4rem; flex-wrap: wrap; opacity: 0.6; }
+    .sector-item { font-family: var(--font-head); font-size: 1.1rem; font-weight: 800; color: var(--text-main); letter-spacing: 1px; }
+
+    /* CERTIFICATIONS BAR */
+    .certs { background: #0A0A0F; padding: 60px 8%; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); text-align: center; }
+    .certs-grid { display: flex; justify-content: center; gap: 5rem; flex-wrap: wrap; align-items: center; }
+    .cert-item { font-family: var(--font-head); font-size: 1.25rem; font-weight: 900; color: var(--text-dim); border: 2px solid var(--border); padding: 10px 24px; border-radius: 4px; letter-spacing: 2px; }
+    .cert-item.gold { color: var(--accent); border-color: var(--gold-border); }
+
+    /* FAQ SECTION */
+    .faq { background: #060608; border-top: 1px solid var(--border); }
+    .faq-grid { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 1.5rem; }
+    .faq-item { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem 2rem; cursor: pointer; transition: var(--transition); }
+    .faq-item:hover { border-color: var(--gold-border); }
+    .faq-q { font-family: var(--font-head); font-size: 1.1rem; font-weight: 700; display: flex; justify-content: space-between; align-items: center; }
+    .faq-q::after { content: '+'; color: var(--accent); font-size: 1.5rem; transition: transform 0.3s; }
+    .faq-item.active .faq-q::after { transform: rotate(45deg); }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.5s cubic-bezier(0, 1, 0, 1); color: var(--text-dim); font-size: 0.95rem; margin-top: 0px; line-height: 1.6; }
+    .faq-item.active .faq-a { max-height: 500px; margin-top: 1rem; }
+
     /* TRUST SECTION */
     .trust { padding: 80px 8%; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
     .trust-grid { display: flex; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
@@ -221,6 +267,11 @@
       .product-card { padding: 1.5rem; }
       .p-img-box { height: 220px; }
       
+      .comp-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .comp-box { padding: 2rem; }
+      .finishing-grid { grid-template-columns: 1fr; }
+      .certs-grid { gap: 2rem; }
+      
       .contact-form { padding: 2rem; border-radius: 20px; }
       .contact-info h2 { font-size: 2rem; }
       .contact-info p { font-size: 1rem; }
@@ -281,6 +332,17 @@
   </div>
 </section>
 
+<section class="sectors">
+  <div class="sectors-title reveal">Serving High-End Global Industries</div>
+  <div class="sectors-grid reveal">
+    <div class="sector-item">MEDICAL</div>
+    <div class="sector-item">AUTOMOTIVE</div>
+    <div class="sector-item">CONSUMER ELECTRONICS</div>
+    <div class="sector-item">SMART HOME</div>
+    <div class="sector-item">AEROSPACE</div>
+  </div>
+</section>
+
 <section class="about" id="about">
   <div class="about-grid">
     <div class="video-wrapper reveal">
@@ -294,6 +356,33 @@
       <p>Based in Xiamen, Yidexin is a professional manufacturer specializing in high-precision silicone rubber products. Our state-of-the-art facility integrates mould design, production, and quality control.</p>
       <p>We empower global brands with reliable components, from custom keypads to medical-grade liquid silicone parts, ensuring every piece meets rigorous international standards.</p>
       <a href="#contact" class="product-cta">Learn More About Us →</a>
+    </div>
+  </div>
+</section>
+
+<section class="comparison">
+  <div class="section-head reveal">
+    <h2>Why Work With Us</h2>
+    <p>Factory-direct manufacturing ensures maximum cost efficiency and full control over material quality.</p>
+  </div>
+  <div class="comp-grid reveal">
+    <div class="comp-box premium">
+      <h3>Yidexin Factory Direct</h3>
+      <ul class="comp-list">
+        <li><span>✓</span> <strong>30-40% Cost Savings</strong>: Bypass trading markups with direct-to-factory wholesale rates.</li>
+        <li><span>✓</span> <strong>Full Tooling Ownership</strong>: You own the injection moulds. Rapid modifications done in-house.</li>
+        <li><span>✓</span> <strong>Material Integrity</strong>: 100% pure FDA/LFGB-compliant silicone with zero cheap fillers.</li>
+        <li><span>✓</span> <strong>Direct Technical Support</strong>: Consult directly with our formulation and tooling engineers.</li>
+      </ul>
+    </div>
+    <div class="comp-box">
+      <h3>Trading Companies / Sourcing Agents</h3>
+      <ul class="comp-list negative">
+        <li><span>✗</span> <strong>Agent Markups</strong>: Hidden commissions and 20%+ broker markups on every order.</li>
+        <li><span>✗</span> <strong>Mould Ownership Disputes</strong>: High fees for transferring moulds or restricted tooling access.</li>
+        <li><span>✗</span> <strong>Unreliable Formulation</strong>: Cheap filler compounds used to lower manufacturer costs.</li>
+        <li><span>✗</span> <strong>Communication Gaps</strong>: Slow responses due to multiple layers of middlemen.</li>
+      </ul>
     </div>
   </div>
 </section>
@@ -392,6 +481,71 @@
   </div>
 </section>
 
+<section class="finishing">
+  <div class="section-head reveal">
+    <h2>Same Silicone Part. Premium Finishes.</h2>
+    <p>Enhance your custom silicone products with our advanced secondary processing and high-end surface treatments.</p>
+  </div>
+  <div class="finishing-grid reveal">
+    <div class="finish-card">
+      <h4>Laser Engraving (镭雕)</h4>
+      <p>Precision laser etching for backlit silicone keypads, allowing sharp legend illumination and durable markings.</p>
+    </div>
+    <div class="finish-card">
+      <h4>Silk Screen Printing (丝印)</h4>
+      <p>Multi-color, high-durability screen printing using premium silicone inks to ensure long-lasting wear resistance.</p>
+    </div>
+    <div class="finish-card">
+      <h4>PU & Epoxy Coating (PU/滴胶)</h4>
+      <p>Protective polyurethane coatings for high-friction environments, or premium epoxy gloss dripping for a 3D effect.</p>
+    </div>
+    <div class="finish-card">
+      <h4>Soft-Touch Matte Oil (手感油)</h4>
+      <p>Specialized matte oil spraying that repels dust and provides a velvety, premium tactile skin feel.</p>
+    </div>
+  </div>
+</section>
+
+<section class="process" id="process">
+  <div class="section-head reveal">
+    <h2>4-Step Bespoke Process</h2>
+    <p>From custom formulation and tooling design to global secure shipment, simplified.</p>
+  </div>
+  <div class="process-steps reveal">
+    <div class="step">
+      <div class="step-num">01</div>
+      <h3>Send Requirements</h3>
+      <p>Upload your 2D/3D CAD drawings or physical reference sample.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <h3>Design & Tooling</h3>
+      <p>Our engineers design custom moulds. Rapid prototypes are created in 7 days.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <h3>Sample Approval</h3>
+      <p>Receive physical pre-production samples for functional testing and approval.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">04</div>
+      <h3>Mass Production</h3>
+      <p>ISO-standard compression moulding, strict QC testing, and global logistics delivery.</p>
+    </div>
+  </div>
+</section>
+
+<section class="certs">
+  <div class="sectors-title reveal" style="margin-bottom: 3rem;">Engineered To Global Safety Standards</div>
+  <div class="certs-grid reveal">
+    <div class="cert-item gold">ISO 9001:2015</div>
+    <div class="cert-item">FDA COMPLIANT</div>
+    <div class="cert-item">LFGB APPROVED</div>
+    <div class="cert-item">ROHS DIRECTIVE</div>
+    <div class="cert-item">REACH TESTED</div>
+  </div>
+</section>
+
 <section class="contact" id="contact">
   <div class="contact-container">
     <div class="contact-info reveal">
@@ -435,6 +589,31 @@
         </div>
         <button type="submit" class="btn-main" style="width: 100%; cursor: pointer; border: none;">Send Inquiry</button>
       </form>
+    </div>
+  </div>
+</section>
+
+<section class="faq" id="faq">
+  <div class="section-head reveal">
+    <h2>Frequently Asked Questions</h2>
+    <p>Everything you need to know about our custom silicone manufacturing capabilities and policies.</p>
+  </div>
+  <div class="faq-grid reveal">
+    <div class="faq-item">
+      <div class="faq-q">What is your Minimum Order Quantity (MOQ)?</div>
+      <div class="faq-a">Our MOQ varies depending on the product size and complexity. Generally, for standard custom keypads and OEM silicone parts, our MOQ starts from 1,000 pcs. For larger components, a lower MOQ can be discussed.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Can you customize compounds for specific environments?</div>
+      <div class="faq-a">Yes! We can custom-mix silicone compounds to meet special specifications, including high-temperature resistance (up to 300°C), flame retardant (UL94-V0), fuel/oil resistance, high tensile strength, and medical/food-grade standards (FDA, LFGB).</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What are your tooling and sample lead times?</div>
+      <div class="faq-a">Typically, mould design and tooling fabrication take 10 to 15 days. Once the mould is ready, we can send you physical prototype samples for testing within 3 to 5 days.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How do you handle mould fee refunds?</div>
+      <div class="faq-a">We offer complete or partial mould fee refunds once your cumulative mass-production order volume reaches a pre-agreed threshold (e.g., 50,000 pcs, depending on the product type).</div>
     </div>
   </div>
 </section>
@@ -502,6 +681,19 @@
     } else {
       nav.style.background = 'rgba(10, 10, 15, 0.8)';
     }
+  });
+
+  // FAQ ACCORDION TOGGLE
+  document.querySelectorAll('.faq-item').forEach(item => {
+    item.addEventListener('click', () => {
+      const isActive = item.classList.contains('active');
+      // Close all first
+      document.querySelectorAll('.faq-item').forEach(el => el.classList.remove('active'));
+      // Toggle current
+      if (!isActive) {
+        item.classList.add('active');
+      }
+    });
   });
 </script>
 
