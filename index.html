@@ -186,6 +186,24 @@
     .sectors-grid { display: flex; justify-content: center; gap: 4rem; flex-wrap: wrap; opacity: 0.6; }
     .sector-item { font-family: var(--font-head); font-size: 1.1rem; font-weight: 800; color: var(--text-main); letter-spacing: 1px; }
 
+    /* BLOG SECTION */
+    .blog { background: #060608; border-top: 1px solid var(--border); }
+    .blog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 2.5rem; }
+    .blog-card {
+      background: var(--card-bg); border: 1px solid var(--border);
+      border-radius: 20px; overflow: hidden; transition: var(--transition);
+      display: flex; flex-direction: column; height: 100%;
+    }
+    .blog-card:hover { transform: translateY(-10px); border-color: var(--gold-border); box-shadow: 0 30px 60px rgba(0,0,0,0.4); }
+    .blog-img-box { width: 100%; height: 200px; overflow: hidden; background: #000; position: relative; }
+    .blog-img { width: 100%; height: 100%; object-fit: cover; transition: 0.8s ease; opacity: 0.8; }
+    .blog-card:hover .blog-img { transform: scale(1.08); opacity: 1; }
+    .blog-content { padding: 2rem; display: flex; flex-direction: column; flex-grow: 1; }
+    .blog-meta { display: flex; gap: 1rem; font-size: 0.75rem; color: var(--accent); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1rem; }
+    .blog-meta span { color: var(--text-dim); }
+    .blog-card h3 { font-family: var(--font-head); font-size: 1.25rem; margin-bottom: 1rem; line-height: 1.3; }
+    .blog-card p { color: var(--text-dim); font-size: 0.9rem; line-height: 1.6; margin-bottom: 2rem; flex-grow: 1; }
+
     /* CERTIFICATIONS BAR */
     .certs { background: #0A0A0F; padding: 60px 8%; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); text-align: center; }
     .certs-grid { display: flex; justify-content: center; gap: 5rem; flex-wrap: wrap; align-items: center; }
@@ -271,6 +289,7 @@
       .comp-box { padding: 2rem; }
       .finishing-grid { grid-template-columns: 1fr; }
       .certs-grid { gap: 2rem; }
+      .blog-grid { grid-template-columns: 1fr; }
       
       .contact-form { padding: 2rem; border-radius: 20px; }
       .contact-info h2 { font-size: 2rem; }
@@ -285,6 +304,7 @@
   <ul class="nav-links">
     <li><a href="#products">Collection</a></li>
     <li><a href="#about">Our Factory</a></li>
+    <li><a href="#blog">Insights</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
   <div class="menu-toggle" id="mobile-menu">
@@ -546,6 +566,51 @@
   </div>
 </section>
 
+<section class="blog" id="blog">
+  <div class="section-head reveal">
+    <h2>Industrial Insights & Guides</h2>
+    <p>Expert resources on custom silicone formulation, tooling engineering, and compliance standards.</p>
+  </div>
+  <div class="blog-grid reveal">
+    <!-- Post 1 -->
+    <div class="blog-card">
+      <div class="blog-img-box">
+        <img src="https://www.keypadsilicone.com/uploadfile/202005/08/551c7a410e3133ac7aa46a1b2c864849.jpg" class="blog-img" alt="Conductive Keypad Guide">
+      </div>
+      <div class="blog-content">
+        <div class="blog-meta">TOOLING GUIDE <span>•</span> 5 MIN READ</div>
+        <h3>Designing Custom Conductive Silicone Keypads: A 2026 Guide</h3>
+        <p>Unlock core design principles, from tactile actuation force optimization to conductive carbon pill selection and legend wear standards.</p>
+        <a href="#contact" class="product-cta">Read Full Guide →</a>
+      </div>
+    </div>
+    <!-- Post 2 -->
+    <div class="blog-card">
+      <div class="blog-img-box">
+        <img src="https://www.keypadsilicone.com/uploadfile/202005/08/33a821473d242c4665240080de8a786b.JPG" class="blog-img" alt="LSR vs Compression Molding">
+      </div>
+      <div class="blog-content">
+        <div class="blog-meta">MANUFACTURING <span>•</span> 7 MIN READ</div>
+        <h3>LSR Molding vs. Compression Molding: Which is Right for Your Project?</h3>
+        <p>A comprehensive engineering comparison of Liquid Silicone Injection (LSR) vs. traditional compression molding regarding cost, accuracy, and volume.</p>
+        <a href="#contact" class="product-cta">Read Comparative Guide →</a>
+      </div>
+    </div>
+    <!-- Post 3 -->
+    <div class="blog-card">
+      <div class="blog-img-box">
+        <img src="https://www.keypadsilicone.com/uploadfile/201808/15/ffd4d8ef290c830869049dda7b1d1388.JPG" class="blog-img" alt="FDA vs LFGB compliance">
+      </div>
+      <div class="blog-content">
+        <div class="blog-meta">COMPLIANCE <span>•</span> 4 MIN READ</div>
+        <h3>Demystifying Food-Grade Silicone: FDA vs. LFGB Compliance</h3>
+        <p>Understand the critical testing differences between US FDA and European LFGB standards for baby products and kitchenware to ensure zero import issues.</p>
+        <a href="#contact" class="product-cta">Read Safety Standards →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="contact" id="contact">
   <div class="contact-container">
     <div class="contact-info reveal">
@@ -623,6 +688,7 @@
   <div class="footer-links">
     <a href="#products">Collection</a>
     <a href="#about">Factory</a>
+    <a href="#blog">Insights</a>
     <a href="#contact">Quote</a>
   </div>
   <p class="copy">&copy; 2026 Xiamen Yidexin Silicone Rubber Co., Ltd. All rights reserved.</p>
