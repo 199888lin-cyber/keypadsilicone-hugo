@@ -293,6 +293,41 @@
     .footer-links a { color: var(--text-dim); text-decoration: none; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; }
     .copy { font-size: 0.75rem; color: rgba(255,255,255,0.3); }
 
+    /* FLOATING INQUIRY WINDOW */
+    .floating-cta {
+      position: fixed; bottom: 40px; right: 40px; z-index: 999;
+      background: var(--accent); color: #000;
+      padding: 16px 28px; border-radius: 50px;
+      font-family: var(--font-head); font-size: 0.85rem; font-weight: 900;
+      text-transform: uppercase; letter-spacing: 1px; text-decoration: none;
+      display: flex; align-items: center; gap: 10px;
+      box-shadow: 0 15px 30px rgba(201, 168, 76, 0.4);
+      transition: var(--transition);
+      cursor: pointer; border: 1px solid rgba(255,255,255,0.1);
+    }
+    .floating-cta:hover {
+      transform: scale(1.05) translateY(-5px);
+      box-shadow: 0 20px 40px rgba(201, 168, 76, 0.6);
+      background: #e5c165;
+    }
+    .floating-cta::before {
+      content: ''; display: inline-block; width: 10px; height: 10px;
+      background: #000; border-radius: 50%;
+      animation: cta-pulse 1.8s infinite;
+    }
+    @keyframes cta-pulse {
+      0% { box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.5); }
+      70% { box-shadow: 0 0 0 8px rgba(0, 0, 0, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(0, 0, 0, 0); }
+    }
+    .contact-form.highlight-flash {
+      animation: form-flash 1.5s ease-out;
+    }
+    @keyframes form-flash {
+      0% { border-color: var(--accent); box-shadow: 0 0 40px rgba(201, 168, 76, 0.8); }
+      100% { border-color: var(--border); box-shadow: none; }
+    }
+
     /* MOBILE ADAPTATION */
     @media (max-width: 1024px) {
       nav { padding: 0 5%; height: 70px; }
@@ -335,6 +370,8 @@
       .contact-form { padding: 2rem; border-radius: 20px; }
       .contact-info h2 { font-size: 2rem; }
       .contact-info p { font-size: 1rem; }
+      
+      .floating-cta { bottom: 20px; right: 20px; padding: 12px 20px; font-size: 0.75rem; }
     }
   </style>
 </head>
@@ -616,37 +653,43 @@
     <!-- Post 1 -->
     <div class="blog-card">
       <div class="blog-img-box">
-        <img src="https://www.keypadsilicone.com/uploadfile/202005/08/551c7a410e3133ac7aa46a1b2c864849.jpg" class="blog-img" alt="Conductive Keypad Guide">
+        <a href="blog/designing-custom-conductive-silicone-keypads.html">
+          <img src="https://www.keypadsilicone.com/uploadfile/202005/08/551c7a410e3133ac7aa46a1b2c864849.jpg" class="blog-img" alt="Conductive Keypad Guide">
+        </a>
       </div>
       <div class="blog-content">
         <div class="blog-meta">TOOLING GUIDE <span>•</span> 5 MIN READ</div>
-        <h3>Designing Custom Conductive Silicone Keypads: A 2026 Guide</h3>
+        <h3><a href="blog/designing-custom-conductive-silicone-keypads.html" style="color: inherit; text-decoration: none;">Designing Custom Conductive Silicone Keypads: A 2026 Guide</a></h3>
         <p>Unlock core design principles, from tactile actuation force optimization to conductive carbon pill selection and legend wear standards.</p>
-        <a href="#contact" class="product-cta">Read Full Guide →</a>
+        <a href="blog/designing-custom-conductive-silicone-keypads.html" class="product-cta">Read Full Guide →</a>
       </div>
     </div>
     <!-- Post 2 -->
     <div class="blog-card">
       <div class="blog-img-box">
-        <img src="https://www.keypadsilicone.com/uploadfile/202005/08/33a821473d242c4665240080de8a786b.JPG" class="blog-img" alt="LSR vs Compression Molding">
+        <a href="blog/lsr-molding-vs-compression-molding.html">
+          <img src="https://www.keypadsilicone.com/uploadfile/202005/08/33a821473d242c4665240080de8a786b.JPG" class="blog-img" alt="LSR vs Compression Molding">
+        </a>
       </div>
       <div class="blog-content">
         <div class="blog-meta">MANUFACTURING <span>•</span> 7 MIN READ</div>
-        <h3>LSR Molding vs. Compression Molding: Which is Right for Your Project?</h3>
+        <h3><a href="blog/lsr-molding-vs-compression-molding.html" style="color: inherit; text-decoration: none;">LSR Molding vs. Compression Molding: Which is Right for Your Project?</a></h3>
         <p>A comprehensive engineering comparison of Liquid Silicone Injection (LSR) vs. traditional compression molding regarding cost, accuracy, and volume.</p>
-        <a href="#contact" class="product-cta">Read Comparative Guide →</a>
+        <a href="blog/lsr-molding-vs-compression-molding.html" class="product-cta">Read Comparative Guide →</a>
       </div>
     </div>
     <!-- Post 3 -->
     <div class="blog-card">
       <div class="blog-img-box">
-        <img src="https://www.keypadsilicone.com/uploadfile/201808/15/ffd4d8ef290c830869049dda7b1d1388.JPG" class="blog-img" alt="FDA vs LFGB compliance">
+        <a href="blog/fda-vs-lfgb-food-grade-silicone.html">
+          <img src="https://www.keypadsilicone.com/uploadfile/201808/15/ffd4d8ef290c830869049dda7b1d1388.JPG" class="blog-img" alt="FDA vs LFGB compliance">
+        </a>
       </div>
       <div class="blog-content">
         <div class="blog-meta">COMPLIANCE <span>•</span> 4 MIN READ</div>
-        <h3>Demystifying Food-Grade Silicone: FDA vs. LFGB Compliance</h3>
+        <h3><a href="blog/fda-vs-lfgb-food-grade-silicone.html" style="color: inherit; text-decoration: none;">Demystifying Food-Grade Silicone: FDA vs. LFGB Compliance</a></h3>
         <p>Understand the critical testing differences between US FDA and European LFGB standards for baby products and kitchenware to ensure zero import issues.</p>
-        <a href="#contact" class="product-cta">Read Safety Standards →</a>
+        <a href="blog/fda-vs-lfgb-food-grade-silicone.html" class="product-cta">Read Safety Standards →</a>
       </div>
     </div>
   </div>
@@ -802,7 +845,27 @@
       }
     });
   });
+
+  // FLOATING CTA SCROLL & HIGHLIGHT
+  const floatingCta = document.getElementById('floating-cta');
+  const contactForm = document.querySelector('.contact-form');
+
+  floatingCta.addEventListener('click', (e) => {
+    e.preventDefault();
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+      // Add a quick visual flash to draw attention to the form
+      setTimeout(() => {
+        contactForm.classList.add('highlight-flash');
+        // Remove after animation completes
+        setTimeout(() => contactForm.classList.remove('highlight-flash'), 1500);
+      }, 800);
+    }
+  });
 </script>
+
+<div class="floating-cta" id="floating-cta">Quick Inquiry</div>
 
 </body>
 </html>
